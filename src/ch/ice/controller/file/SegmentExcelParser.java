@@ -45,20 +45,20 @@ public class SegmentExcelParser {
 		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/POS.xlsx");
 		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
 		
-		XSSFWorkbook test = new XSSFWorkbook(); 
+		 
 		
 		XSSFSheet sheet = wb.getSheetAt(0);
 		XSSFRow row; 
 		XSSFCell cell;
 
-		Iterator rows = sheet.rowIterator();
+		Iterator<?> rows = sheet.rowIterator();
 
 		while (rows.hasNext())
 		{
 			row=(XSSFRow) rows.next();
 			if (row.getRowNum() == 0 || row.getRowNum() == 1 || row.getRowNum() == 3)
 				continue;
-			Iterator cells = row.cellIterator();
+			Iterator<?> cells = row.cellIterator();
 			while (cells.hasNext())
 			{
 				cell=(XSSFCell) cells.next();
@@ -90,6 +90,7 @@ public class SegmentExcelParser {
 		 
 		}
 		}
+		wb.close();
 		System.out.println("POS File Read");
 		return companiesPOS;
 		
@@ -102,19 +103,17 @@ public class SegmentExcelParser {
 		//Where the Test file has to be located
 		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/Medical.xlsx");
 		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
-		
-		XSSFWorkbook test = new XSSFWorkbook(); 
-		
+				
 		XSSFSheet sheet = wb.getSheetAt(0);
 		XSSFRow row; 
 		XSSFCell cell;
 				
-				Iterator rows = sheet.rowIterator();
+				Iterator<?> rows = sheet.rowIterator();
 
 				while (rows.hasNext())
 				{ 
 					row=(XSSFRow) rows.next();
-					Iterator cells = row.cellIterator();
+					Iterator<?> cells = row.cellIterator();
 					while (cells.hasNext())
 					{
 						cell=(XSSFCell) cells.next();
@@ -148,9 +147,10 @@ public class SegmentExcelParser {
 					this.companiesRegister.add(this.createSegment());
 					
 				}	
-				
+				wb.close();
 				System.out.println("Registry File read");
 		return companiesRegister;
+		
 	}
 	
 	private String checkForCellType(Cell cell) {

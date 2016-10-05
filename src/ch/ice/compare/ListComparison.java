@@ -55,6 +55,18 @@ public class ListComparison {
 					if(stringDistance < minStringDistance){
 						minStringDistance = stringDistance;
 						indexOfBestResult = k;
+						if(minStringDistance == 0){
+							this.companyName =Register.get(indexOfBestResult).getCompanyName();
+							this.companySegment = Register.get(indexOfBestResult).getCompanySegment();
+							this.unprocessedCompanyName = Register.get(indexOfBestResult).getUnprocessedCompanyName();
+							if (minStringDistance <= 0.01){
+								medical++;
+							}
+							segmentedList.add(i,this.createLevensteinSegment());
+							minStringDistance = 1;
+							break;
+						}
+						
 					}
 					if (k == Register.size()-1){
 						this.companyName =Register.get(indexOfBestResult).getCompanyName();

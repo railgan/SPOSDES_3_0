@@ -18,9 +18,9 @@ public class SegmentationMain {
 			ListComparison Comparer = new ListComparison();
 			SegmentExcelWriter Writer = new SegmentExcelWriter();
 			
-			
-			ArrayList<Segment> ListReg2 = Parser.readRegisterFile();
 			ArrayList<String> ListPos2 = Parser.readPOSFile();
+			ArrayList<Segment> ListReg2 = Parser.readRegisterFile();
+			
 			ArrayList<Segment> ListSegmented= Comparer.compareLists(ListReg2, ListPos2);
 			
 			System.out.println("Time to Segment");
