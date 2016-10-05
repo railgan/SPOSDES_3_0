@@ -83,5 +83,19 @@
 			<artifactId>opencsv</artifactId>
 			<version>2.4</version>
 		</dependency>
+		
+  <!-- https://mvnrepository.com/artifact/info.debatty/java-string-similarity -->
+<dependency>
+    <groupId>info.debatty</groupId>
+    <artifactId>java-string-similarity</artifactId>
+    <version>0.18</version>
+</dependency>
+  <dependency>
+       <groupId>net.jcip</groupId>
+       <artifactId>jcip-annotations</artifactId>
+       <version>1.0</version>
+    </dependency>
+     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+
 	</dependencies>
 </project>
