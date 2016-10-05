@@ -372,7 +372,8 @@ public class SaveWindowController extends Thread implements Initializable {
 
 									closeButton.setDisable(false);
 									openFileButton.setDisable(false);
-									cancelButton.setText("Main Menu");
+									// SPOSDES 3.0
+									cancelButton.setText("Segmentation menu");
 									myBoo = false;
 									myBooChecking = false;
 									myBooWriting = false;

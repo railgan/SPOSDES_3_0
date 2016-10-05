@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane prefHeight="450.0" prefWidth="300.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.StartmenueController">
+   <children>
+      <Button fx:id="btnSegment" layoutX="38.0" layoutY="239.0" mnemonicParsing="false" onAction="#startSegmentation" prefHeight="171.0" prefWidth="225.0" text="Segment Data" textFill="WHITE">
+		<graphic>
+		<ImageView>
+   <image>
+   		<Image url="segment.png" />
+   </image>
+		</ImageView>
+		</graphic>
+      </Button>
+      <Button id="#btnEnrich:hover" fx:id="btnEnrich" layoutX="38.0" layoutY="32.0" mnemonicParsing="false" onAction="#startEnrichment" prefHeight="171.0" prefWidth="225.0" text="Enrich Data    " textFill="WHITE">
+      <graphic>
+		<ImageView>
+   <image>
+   		<Image url="enrich.png" />
+   </image>
+		</ImageView>
+		</graphic>
+      </Button>
+
+   </children>
+</AnchorPane>

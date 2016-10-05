@@ -21,7 +21,6 @@
             -fx-border-radius: 4px;
 }
 
-
 #resetKeyButton:hover:pressed {
 	-fx-background-color: #555555;
             -fx-border-radius: 4px;
@@ -29,8 +28,8 @@
 }
 
 #resetKeyButton:hover {
-	-fx-background-color: #A0A0A0;
             -fx-border-radius: 4px;
+
 }
 
 #resetKeyButton {
@@ -132,8 +131,10 @@
 
 
 .button:hover {
-			-fx-background-color: #A0A0A0;
-            -fx-border-radius: 3px;
+			
+            
+            -fx-border-width: 6px;
+            -fx-border-color: #FFFEFD;
 
             
 	}
@@ -200,16 +201,4 @@
 #blackListView .list-cell:filled:hover {
     -fx-background-color: #0093ff;
     -fx-text-fill: white;
-}
-
-#btnEnrich:hover {
-			-fx-background-color: #336699;
-	        -fx-border-width: 6px;
-            -fx-border-color: #FFFEFD;
-}
-
-#btnSegment:hover {
-		
-	        -fx-border-width: 6px;
-            -fx-border-color: #FFFEFD;
 }

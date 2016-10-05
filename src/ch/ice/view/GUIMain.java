@@ -99,7 +99,8 @@ public class GUIMain extends Application {
 		// }
 		// };
 		// timer.scheduleAtFixedRate(task, initialDelay, period);
-
+		
+		/*
 		Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
 
 		Scene scene = new Scene(root);
@@ -121,6 +122,21 @@ public class GUIMain extends Application {
 							}
 						}));
 		timeline.play();
+		*/
+		
+		try{
+			// Startmenue aufrufen
+			Stage primaryStage1 = new Stage();
+			Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Startmenue.fxml"));
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
+			primaryStage1.setScene(scene);
+			primaryStage1.show();
+			
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 	}
 
@@ -129,6 +145,9 @@ public class GUIMain extends Application {
 	}
 
 	public void loadMain() {
+		
+		
+		
 
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
 				"/ch/ice/view/Schurter.fxml"));
@@ -151,5 +170,7 @@ public class GUIMain extends Application {
 			logger.error(e);
 
 		}
+		
+
 	}
 }

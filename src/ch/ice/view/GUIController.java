@@ -86,6 +86,19 @@ public class GUIController implements Initializable {
 	private Button closeWindowButton;
 	@FXML
 	private Button lowerWindowButton;
+	
+	// SPOSDES Version 3.0
+	@FXML
+	private Button btnCancel;
+	
+	// Defintionen für Startmenü (VERSION 3.0)
+	@FXML
+	private Button SegmentDataOption;
+	
+	@FXML
+	private Button EnrichDataOption;
+	
+	// Definitionen für Segmentation-Menü (VERSION 3.0)
 
 	@FXML
 	private VBox vBox;
@@ -146,6 +159,28 @@ public class GUIController implements Initializable {
 
 	public static final Logger logger = LogManager
 			.getLogger(GUIController.class.getName());
+	
+	
+	/**
+	 * SPOSDES Version 3.0
+	 * Leads from the Enrichment-Menue back to the startmenue
+	 * @throws IOException 
+	 */
+	public void startStartmenue() throws IOException{
+		Stage primaryStage1 = new Stage();
+		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Startmenue.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
+		primaryStage1.setScene(scene);
+		primaryStage1.show();
+		
+		// close current window
+		Stage currentStage = (Stage) btnCancel.getScene()
+				.getWindow();
+		currentStage.close();
+		
+		
+	}
 
 	/**
 	 * Gets the Metatags out of the Properties and Updates the Label in the

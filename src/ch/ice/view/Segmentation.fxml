@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="mainWindow" fx:id="vBox" prefHeight="500.0" prefWidth="640.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.GUIController">
+<VBox id="segmentWindow" fx:id="vBox" prefHeight="500.0" prefWidth="640.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.SegmentationController">
   <children>
       <StackPane VBox.vgrow="ALWAYS">
          <children>
@@ -43,20 +43,20 @@
       </StackPane>
     <AnchorPane id="mainMenuBar" maxHeight="-1.0" maxWidth="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Label layoutX="52.0" layoutY="14.0" text="Please select File:">
+            <Label layoutX="52.0" layoutY="14.0" text="Please select File for Segmentation">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField id="fileTextField" fx:id="fileTextField" editable="false" layoutX="52.0" layoutY="40.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
-            <Button id="selectFileButton" fx:id="selectFileButton" layoutX="508.0" layoutY="40.0" mnemonicParsing="false" text="Select File" textFill="WHITE" />
-            <Label layoutX="52.0" layoutY="88.0" text="Selected Metatags:">
+            <TextField id="fileTextField" fx:id="txtSelectFile" editable="false" layoutX="52.0" layoutY="40.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
+            <Button id="selectFileButton" fx:id="btnSelectFile" layoutX="508.0" layoutY="40.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
+            <Label layoutX="52.0" layoutY="88.0" text="Selected Industries">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
             <Label fx:id="metaTagsList" layoutX="52.0" layoutY="110.0" text="Label" />
-            <TextField id="fileTextField" fx:id="pathTextField" editable="false" layoutX="52.0" layoutY="220.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define your processed File will be saved" />
-            <Button id="selectFileButton" fx:id="changeDirectory" layoutX="508.0" layoutY="220.0" mnemonicParsing="false" prefWidth="81.0" text="Change" textFill="WHITE" />
+            <TextField id="fileTextField" fx:id="txtSaveTo" editable="false" layoutX="52.0" layoutY="220.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define your processed File will be saved" />
+            <Button id="selectFileButton" fx:id="btnChangeDir" layoutX="508.0" layoutY="220.0" mnemonicParsing="false" onAction="#startChangeDir" prefWidth="81.0" text="Change" textFill="WHITE" />
             <Label layoutX="52.0" layoutY="193.0" text="Your File will be saved to:">
                <font>
                   <Font name="System Bold" size="13.0" />
@@ -65,7 +65,7 @@
     </AnchorPane>
       <AnchorPane fx:id="anchorLow" prefHeight="200.0">
          <children>
-            <Button id="startSearchButton" fx:id="startSearchButton" layoutX="52.0" layoutY="106.0" mnemonicParsing="false" text="Start Search" textFill="WHITE">
+            <Button id="startSearchButton" fx:id="btnStartSegmentation" layoutX="54.0" layoutY="113.0" mnemonicParsing="false" text="Start Segmentation" textFill="WHITE">
                <effect>
                   <Reflection fraction="0.53" topOpacity="0.75" />
                </effect>
@@ -81,7 +81,7 @@
                   <Font name="System Bold" size="13.0" />
                </font></Label>
             <ImageView fx:id="searchImage" fitHeight="40.0" fitWidth="100.0" layoutX="511.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
-            <Button id="startSearchButton" fx:id="btnCancel" layoutX="191.0" layoutY="106.0" mnemonicParsing="false" onAction="#startStartmenue" text="Cancel" textFill="WHITE">
+            <Button id="startSearchButton" fx:id="btnCancel" layoutX="243.0" layoutY="113.0" mnemonicParsing="false" onAction="#startStartmenue" text="Cancel" textFill="WHITE">
                <effect>
                   <Reflection fraction="0.53" topOpacity="0.75" />
                </effect>
