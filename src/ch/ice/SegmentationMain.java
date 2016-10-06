@@ -15,12 +15,12 @@ public class SegmentationMain {
 			
 			
 			SegmentExcelParser Parser = new SegmentExcelParser();
-			ListComparison Comparer = new ListComparison();
-			SegmentExcelWriter Writer = new SegmentExcelWriter();
+			
 			
 			ArrayList<String> ListPos2 = Parser.readPOSFile();
 			ArrayList<Segment> ListReg2 = Parser.readRegisterFile();
-			
+			ListComparison Comparer = new ListComparison();
+			SegmentExcelWriter Writer = new SegmentExcelWriter();
 			ArrayList<Segment> ListSegmented= Comparer.compareLists(ListReg2, ListPos2);
 			
 			System.out.println("Time to Segment");

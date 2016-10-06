@@ -56,7 +56,7 @@ public class SegmentExcelParser {
 		while (rows.hasNext())
 		{
 			row=(XSSFRow) rows.next();
-			if (row.getRowNum() == 0 || row.getRowNum() == 1 || row.getRowNum() == 3)
+			if (row.getRowNum() == 0 || row.getRowNum() == 1 || row.getRowNum() == 2)
 				continue;
 			Iterator<?> cells = row.cellIterator();
 			while (cells.hasNext())
