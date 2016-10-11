@@ -126,7 +126,7 @@
 
 .button {
 	-fx-background-color: #336699;
-            -fx-border-radius: 4px;
+    -fx-border-radius: 4px;
 }
 
 
@@ -202,14 +202,14 @@
     -fx-text-fill: white;
 }
 
-#btnEnrich:hover {
+#btnEnrich:hover{
 			-fx-background-color: #336699;
 	        -fx-border-width: 6px;
-            -fx-border-color: #FFFEFD;
+            -fx-border-color: #A0A0A0;
 }
 
 #btnSegment:hover {
-		
+			-fx-background-color: #336699;
 	        -fx-border-width: 6px;
-            -fx-border-color: #FFFEFD;
+            -fx-border-color: #A0A0A0;
 }

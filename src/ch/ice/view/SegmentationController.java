@@ -76,11 +76,7 @@ public class SegmentationController {
 			// Nur Excel oder csv Dateien anzeigen
 			fc.getExtensionFilters().addAll(
 							new FileChooser.ExtensionFilter(
-									"Excel-File (*.xlsx)", "*.xlsx"),
-							new FileChooser.ExtensionFilter(
-									"Excel-File (*.xls)", "*.xls"),
-							new FileChooser.ExtensionFilter("CSV-File (*.csv)",
-									"*.csv"));
+									"Excel-File (*.xlsx)", "*.xlsx"));
 			
 			// // FileChooser Dialog öffnen und ausgewählte Datei in SelecteFile speichern
 			File selectedFile = fc.showOpenDialog(null);

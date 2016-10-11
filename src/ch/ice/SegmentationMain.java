@@ -11,8 +11,7 @@ import ch.ice.model.Segment;
 public class SegmentationMain {
 
 	public static void main(String[] args) throws IOException {
-			
-			
+						
 			
 			SegmentExcelParser Parser = new SegmentExcelParser();
 			
