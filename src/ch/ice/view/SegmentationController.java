@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import org.apache.commons.configuration.ConfigurationException;
 
+import ch.ice.SegmentationMain;
 import ch.ice.controller.MainController;
 import ch.ice.exceptions.InternalFormatException;
 import ch.ice.exceptions.MissingCustomerRowsException;
@@ -32,6 +33,11 @@ import javafx.stage.StageStyle;
 
 public class SegmentationController {
 	
+	
+	public SegmentationController()  // Standardkonstruktor
+	  {
+	  }
+	
 	@FXML
 	private Button btnStartSegmentation;
 	
@@ -42,28 +48,54 @@ public class SegmentationController {
 	private TextField txtSaveTo;
 	
 	@FXML
-	private TextField txtSelectFile;
+	public TextField txtPOSfile;
 	
 	@FXML
 	private Button btnChangeDir;
 	
 	@FXML
-	private Button btnSelectFile;
+	private TextField txtSegmentationFile;
+	
+	@FXML
+	private Button btnSelectSegmentation;
+	
+	@FXML
+	private Button btnSelectPOSfile;
 	
 	/**
 	 * path for storage of file
 	 */
-	public static String path;
+
 	/**
 	 * path for selected file
 	 */
 	public static String chosenPath;
 
+	
+	/* SPOSDES 3.0 */
+	public static String POSfilePath;
+	public static String saveToDirectoryPath;
+	public static String SegmentationFilePath;
+
 	private File pathFile;
 	
-	/**
-	 * ActionListener for Change Directory Button
-	 */
+
+	
+	public void startSegmentation() throws IOException{
+		// TextField variables
+		POSfilePath = txtPOSfile.getText();
+		saveToDirectoryPath = txtSaveTo.getText();
+		SegmentationFilePath = txtSegmentationFile.getText();
+		
+		
+		// Check if Excel are really available
+		new File("path/to/file.txt").isFile();
+		new File("C:/").exists();
+		
+		
+		// Start Segmentation Function
+		SegmentationMain.main(null);
+	}
 	
 	
 	public void startSearchFile() {
@@ -84,7 +116,7 @@ public class SegmentationController {
 					
 			// Wenn etwas ausgewählt wurde, in Liste adden und Textbox schreiben
 			if (selectedFile != null){
-				txtSelectFile.setText(selectedFile.getAbsolutePath());
+				txtPOSfile.setText(selectedFile.getAbsolutePath());
 			}
 		}
 	

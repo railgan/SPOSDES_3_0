@@ -1,5 +1,6 @@
 package ch.ice.controller.file;
 
+import ch.ice.view.SegmentationController;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,7 +43,7 @@ public class SegmentExcelParser {
 	{
 		
 		//Where the Test file has to be located
-		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/POS.xlsx");
+		InputStream ExcelFileToRead = new FileInputStream(SegmentationController.POSfilePath);
 		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
 		
 		 
@@ -101,7 +102,7 @@ public class SegmentExcelParser {
 	public  ArrayList<Segment> readRegisterFile() throws IOException
 	{
 		//Where the Test file has to be located
-		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/Medical.xlsx");
+		InputStream ExcelFileToRead = new FileInputStream(SegmentationController.SegmentationFilePath);
 		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
 				
 		XSSFSheet sheet = wb.getSheetAt(0);

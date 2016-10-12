@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import ch.ice.view.SegmentationController;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -26,12 +27,10 @@ public class SegmentExcelWriter {
 	
 	public void writeXLSXFile(ArrayList<Segment> segmentCustomerList) throws IOException {
 		
-		
-		
-		String excelFileName = "C:/Javatest/Segmented"+dateFormat.format(date)+".xlsx";
-		String oldExcelFile = "C:/Javatest/POS.xlsx";
-		
-		
+				
+		String excelFileName = SegmentationController.saveToDirectoryPath+"/Segmented"+dateFormat.format(date)+".xlsx";
+		String oldExcelFile = SegmentationController.POSfilePath;
+						
 		int cellnum;
 		int rownum;
 		double segmentMargain = 0.01;

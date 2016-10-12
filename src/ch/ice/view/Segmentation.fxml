@@ -48,24 +48,25 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField id="fileTextField" fx:id="txtSelectFile" editable="false" layoutX="52.0" layoutY="40.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
-            <Button id="selectFileButton" fx:id="btnSelectFile" layoutX="508.0" layoutY="40.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
-            <Label layoutX="52.0" layoutY="88.0" text="Selected Industries">
+            <TextField id="fileTextField" fx:id="txtPOSfile" editable="false" layoutX="52.0" layoutY="40.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
+            <Button id="selectFileButton" fx:id="btnSelectFile" layoutX="508.0" layoutY="41.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
+            <Label layoutX="52.0" layoutY="88.0" text="Select Industries Segmentations">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <Label fx:id="metaTagsList" layoutX="52.0" layoutY="110.0" text="Label" />
             <TextField id="fileTextField" fx:id="txtSaveTo" editable="false" layoutX="52.0" layoutY="220.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define your processed File will be saved" />
             <Button id="selectFileButton" fx:id="btnChangeDir" layoutX="508.0" layoutY="220.0" mnemonicParsing="false" onAction="#startChangeDir" prefWidth="81.0" text="Change" textFill="WHITE" />
             <Label layoutX="52.0" layoutY="193.0" text="Your File will be saved to:">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
+            <TextField id="fileTextField" fx:id="txtSelectSegmentation" editable="false" layoutX="52.0" layoutY="115.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
+            <Button id="selectFileButton" fx:id="btnSelectFile1" layoutX="508.0" layoutY="116.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
       </children>
     </AnchorPane>
       <AnchorPane fx:id="anchorLow" prefHeight="200.0">
          <children>
-            <Button id="startSearchButton" fx:id="btnStartSegmentation" layoutX="54.0" layoutY="113.0" mnemonicParsing="false" text="Start Segmentation" textFill="WHITE">
+            <Button id="startSearchButton" fx:id="btnStartSegmentation" layoutX="54.0" layoutY="113.0" mnemonicParsing="false" onAction="#startSegmentation" text="Start Segmentation" textFill="WHITE">
                <effect>
                   <Reflection fraction="0.53" topOpacity="0.75" />
                </effect>
