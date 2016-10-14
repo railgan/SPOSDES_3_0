@@ -127,6 +127,7 @@ public class GUIMain extends Application {
 		try{
 			// Startmenue aufrufen
 			Stage primaryStage1 = new Stage();
+			primaryStage1.initStyle(StageStyle.UNDECORATED);
 			Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Startmenue.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());

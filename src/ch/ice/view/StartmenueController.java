@@ -30,6 +30,7 @@ public class StartmenueController {
 		public void startSegmentation(ActionEvent event) throws Exception{
 				
 				Stage primaryStage = new Stage();
+				primaryStage.initStyle(StageStyle.UNDECORATED);
 				Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Segmentation.fxml"));
 				Scene scene = new Scene(root);
 				scene.getStylesheets().add(getClass().getResource("Webcrawler.css").toExternalForm());

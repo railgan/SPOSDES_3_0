@@ -120,6 +120,28 @@ public class SegmentationController {
 			}
 		}
 	
+	public void startSearchSegmentation() {
+		
+		// FileChooser
+				FileChooser fc = new FileChooser();
+				
+				// Pfad vordefinieren
+				fc.setInitialDirectory(new File ("C:\\Users\\Kevin"));
+				// Nur Excel oder csv Dateien anzeigen
+				fc.getExtensionFilters().addAll(
+								new FileChooser.ExtensionFilter(
+										"Excel-File (*.xlsx)", "*.xlsx"));
+				
+				// // FileChooser Dialog öffnen und ausgewählte Datei in SelecteFile speichern
+				File selectedFile = fc.showOpenDialog(null);
+				
+						
+				// Wenn etwas ausgewählt wurde, in Liste adden und Textbox schreiben
+				if (selectedFile != null){
+					txtSegmentationFile.setText(selectedFile.getAbsolutePath());
+				}
+			}
+	
 	public void startChangeDir() {
 		
 		// DirectoryChooser
@@ -138,88 +160,24 @@ public class SegmentationController {
 		}
 	}
 		
-		/*
-		DirectoryChooser directoryChooser = new DirectoryChooser();
-
-		//@Override
-		public void handle(ActionEvent event) {
-			// TODO Auto-generated method stub
-			// Stage stage = new Stage();
-			Node source = (Node) event.getSource();
-			Stage stage = (Stage) source.getScene().getWindow();
-			try {
-				if (!path.isEmpty() && pathFile.exists() == true) {
-					File initial = new File(path);
-					directoryChooser.setInitialDirectory(initial);
-
-				}
-				pathFile = directoryChooser.showDialog(stage);
-
-				if (pathFile != null && pathFile.exists() == true) {
-					setSaveProperties(pathFile.getAbsolutePath(),
-							chosenPath);
-					config.save();
-					getSaveProperties(startSearchButton);
-					txtSaveTo.setText(path);
-					txtSaveTo.setStyle("-fx-text-inner-color: black;");
-					checkAll();
-
-				} else if (pathFile == null) {
-					txtSaveTo.setText(path);
-					txtSaveTo.setStyle("-fx-text-inner-color: black;");
-					pathFile = new File(path);
-					checkAll();
-
-				} else {
-
-					txtSaveTo.setText("Illegal Directory for Saving");
-					txtSaveTo.setStyle("-fx-text-inner-color: red;");
-					checkAll();
-				}
-				// if there is no path selected
-			} catch (NullPointerException | ConfigurationException e) {
-				logger.error(e);
-				e.printStackTrace();
-				System.out.println("No Path selected");
-				txtSaveTo.setText("No Directory selected");
-				txtSaveTo.setStyle("-fx-text-inner-color: red;");
-				setSaveProperties("", chosenPath);
-				checkAll();
-				try {
-					config.save();
-				} catch (ConfigurationException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-					logger.error(e1);
-				}
-				getSaveProperties(startSearchButton);
-				checkAll();
-
-				// if Directory is invalid
-			} catch (IllegalArgumentException e) {
-				logger.error(e);
-				e.printStackTrace();
-				txtSaveTo.setText("Illegal Directory for Saving");
-				txtSaveTo.setStyle("-fx-text-inner-color: red;");
-				setSaveProperties("", chosenPath);
-				checkAll();
-				try {
-					config.save();
-				} catch (ConfigurationException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-					logger.error(e1);
-				}
-				getSaveProperties(startSearchButton);
-				checkAll();
-
-			}
-		}
-
-	});*/
+	public void startConfiguration() throws IOException{
+		Stage primaryStage1 = new Stage();
+		primaryStage1.initStyle(StageStyle.UNDECORATED);
+		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/segmentation/config.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
+		primaryStage1.setScene(scene);
+		primaryStage1.show();
+		
+		// close current window
+		Stage currentStage = (Stage) btnCancel.getScene()
+				.getWindow();
+		currentStage.close();
+	}
 	
 	public void startStartmenue() throws IOException{
 		Stage primaryStage1 = new Stage();
+		primaryStage1.initStyle(StageStyle.UNDECORATED);
 		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Startmenue.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
@@ -230,8 +188,24 @@ public class SegmentationController {
 		Stage currentStage = (Stage) btnCancel.getScene()
 				.getWindow();
 		currentStage.close();
-		
-		
+			
+	}
+	
+	public void closeWindow(){
+		System.exit(0);
+	}
+	
+	public void startManual(){
+		Desktop dt = Desktop.getDesktop();
+		try {
+
+			dt.open(new File("conf/SPOSDES_manual.pdf"));
+		} catch (IOException e) {
+			// TODO
+			// Auto-generated
+			// catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

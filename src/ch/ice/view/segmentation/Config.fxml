@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0" stylesheets="@../WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.segmentation.ConfigController">
+   <children>
+      <Button fx:id="btnSafe" layoutX="264.0" layoutY="447.0" mnemonicParsing="false" onAction="#safeConfiguration" text="Save" textFill="WHITE" />
+      <Button fx:id="btnCancel" layoutX="319.0" layoutY="447.0" mnemonicParsing="false" onAction="#cancelConfiguration" text="Cancel" textFill="WHITE" />
+      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" text="Data Cleansing">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="90.0" text="Additional Functionalities">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="45.0" text="Remove Special Charakters">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="124.0" text="Deduplicate List">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="chbRemoveSpecialCharakters" layoutX="183.0" layoutY="46.0" mnemonicParsing="false" />
+      <CheckBox fx:id="chbDeduplicate" layoutX="183.0" layoutY="125.0" mnemonicParsing="false" />
+      <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="161.0" text="Segmentation">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSegmentMargin" layoutX="173.0" layoutY="198.0" prefHeight="25.0" prefWidth="41.0" />
+      <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="201.0" text="Segmentation Margin">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
