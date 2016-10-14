@@ -23,7 +23,24 @@ public class StartmenueController {
 	
 	@FXML
 	private Button btnSegment;
+	
+	@FXML
+	private Button btnCloseWindow;
+	
+	@FXML
+	private Button btnLowerWindow;
+	
 	GUIMain mainGUI = new GUIMain();
+	
+	public void closeWindow(){
+		System.exit(0);
+	}
+	
+	public void lowerWindow(){
+		Stage currentStage = (Stage) btnLowerWindow.getScene().getWindow();
+		currentStage.setIconified(true);
+	}
+	
 	
 	// On Button Click, the Segmentation windows opens
 

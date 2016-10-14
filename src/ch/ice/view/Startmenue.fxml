@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -8,9 +11,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<AnchorPane prefHeight="450.0" prefWidth="374.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.StartmenueController">
+<AnchorPane prefHeight="487.0" prefWidth="550.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.StartmenueController">
    <children>
-      <Button fx:id="btnSegment" layoutX="38.0" layoutY="239.0" mnemonicParsing="false" onAction="#startSegmentation" prefHeight="171.0" prefWidth="225.0" text="Segment Data" textFill="WHITE">
+      <StackPane prefHeight="29.0" prefWidth="550.0">
+         <children>
+            <MenuBar minHeight="29.0" prefHeight="29.0" StackPane.alignment="TOP_LEFT" />
+            <HBox alignment="TOP_RIGHT" fillHeight="false" maxHeight="29.0" maxWidth="60.0" spacing="8.0" StackPane.alignment="TOP_RIGHT">
+               <children>
+                  <Button id="lowerWindowButton" fx:id="btnLowerWindow" mnemonicParsing="false" onAction="#lowerWindow" prefHeight="28.0" text="_" />
+                  <Button id="closeWindowButton" fx:id="btnCloseWindow" mnemonicParsing="false" onAction="#closeWindow" prefHeight="28.0" text="X" />
+               </children>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </StackPane>
+      <Button fx:id="btnSegment" layoutX="285.0" layoutY="227.0" mnemonicParsing="false" onAction="#startSegmentation" prefHeight="171.0" prefWidth="225.0" text="Segment Data" textFill="WHITE">
 		<graphic>
 		<ImageView>
    <image>
@@ -19,7 +36,7 @@
 		</ImageView>
 		</graphic>
       </Button>
-      <Button fx:id="btnEnrich" layoutX="38.0" layoutY="32.0" mnemonicParsing="false" onAction="#startEnrichment" prefHeight="171.0" prefWidth="225.0" text="Enrich Data    " textFill="WHITE">
+      <Button fx:id="btnEnrich" layoutX="38.0" layoutY="227.0" mnemonicParsing="false" onAction="#startEnrichment" prefHeight="171.0" prefWidth="225.0" text="Enrich Data    " textFill="WHITE">
       <graphic>
 		<ImageView>
    <image>
@@ -28,6 +45,20 @@
 		</ImageView>
 		</graphic>
       </Button>
+      <Label layoutX="25.0" layoutY="147.0" text="Schurter POS-Data-Enhancement System (SPOSDES)  " textFill="#052a80bf">
+         <effect>
+            <Reflection bottomOpacity="0.12" fraction="1.0" topOpacity="0.29" />
+         </effect>
+         <font>
+            <Font name="Kefa Regular" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="95.0" fitWidth="296.0" layoutX="137.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Pictures/Schurter600.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="321.0" layoutY="441.0" text="© Monticoli, Stadelmann, Lötscher" />
 
    </children>
 </AnchorPane>

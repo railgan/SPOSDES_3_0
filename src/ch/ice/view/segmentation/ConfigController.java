@@ -15,6 +15,8 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.poi.util.SystemOutLogger;
 
 import ch.ice.utils.Config;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,6 +24,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -54,14 +57,15 @@ public class ConfigController {
 		
 		
 		
-		// Checkboxes
+		// Read properties for setting the Checkboxes
 		String deduplicate = (String) config.getProperty("segmentation.deduplicate");
 		String removeSpecial = (String) config.getProperty("segmentation.removeSpecialCharakters");
 		
-		chbDeduplicate.setSelected(true);
+		
 		
 		if ( deduplicate.equals("true")){
 		chbDeduplicate.setSelected(true);
+		
 		}else{
 			chbDeduplicate.setSelected(false);
 			System.out.println("false");
@@ -71,10 +75,39 @@ public class ConfigController {
 				chbRemoveSpecialCharakters.setSelected(true);
 				}else{
 					chbRemoveSpecialCharakters.setSelected(false);
+					
 				}
-				
-	}
 		
+		handleChbRemove();
+		handleChbDeduplicate();
+	}
+	
+	
+	// Method to change Text of Checkboxes on click
+	
+	public void handleChbRemove() {
+
+		if (chbRemoveSpecialCharakters.isSelected() == false) {
+			chbRemoveSpecialCharakters.setText("Removing Special Charakters is deactivated");
+			chbRemoveSpecialCharakters.setTextFill(Color.RED);
+		} else{
+			chbRemoveSpecialCharakters.setText("Removing Special Charakters is activated");
+			chbRemoveSpecialCharakters.setTextFill(Color.GREEN);
+		}
+	}
+	
+	// Method to change Text of Checkboxes on click
+	public void handleChbDeduplicate() {
+
+		if (chbDeduplicate.isSelected() == false) {
+			chbDeduplicate.setText("Deduplicating is deactivated");
+			chbDeduplicate.setTextFill(Color.RED);
+		} else{
+			chbDeduplicate.setText("Deduplicating is activated");
+			chbDeduplicate.setTextFill(Color.GREEN);
+		}
+	}
+	
 	
 	// Method to safe configuration changes into the .XML file
 	public void cancelConfiguration() throws IOException{

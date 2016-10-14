@@ -18,33 +18,29 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="90.0" text="Additional Functionalities">
+      <Label alignment="TOP_LEFT" layoutX="13.0" layoutY="58.0" text="Remove Special Charakters">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="13.0" layoutY="117.0" text="Deduplicate List">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="chbRemoveSpecialCharakters" layoutX="14.0" layoutY="83.0" mnemonicParsing="false" onAction="#handleChbRemove" />
+      <CheckBox fx:id="chbDeduplicate" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleChbDeduplicate" />
+      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="207.0" text="Segmentation">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="45.0" text="Remove Special Charakters">
+      <TextField fx:id="txtSegmentMargin" layoutX="195.0" layoutY="238.0" prefHeight="25.0" prefWidth="41.0" />
+      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="241.0" text="Segmentation Margin">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="124.0" text="Deduplicate List">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="chbRemoveSpecialCharakters" layoutX="183.0" layoutY="46.0" mnemonicParsing="false" />
-      <CheckBox fx:id="chbDeduplicate" layoutX="183.0" layoutY="125.0" mnemonicParsing="false" />
-      <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="161.0" text="Segmentation">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtSegmentMargin" layoutX="173.0" layoutY="198.0" prefHeight="25.0" prefWidth="41.0" />
-      <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="201.0" text="Segmentation Margin">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
+      <Separator layoutX="13.0" layoutY="191.0" prefHeight="0.0" prefWidth="375.0" />
    </children>
 </AnchorPane>

@@ -20,7 +20,7 @@
               <Menu mnemonicParsing="false" text="File">
                 <items>
                   <MenuItem fx:id="MetaTags" mnemonicParsing="false" onAction="#startConfiguration" text="Properties" />
-                        <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" text="Quit" />
+                        <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#closeWindow" text="Quit" />
                 </items>
               </Menu>
                   <Menu mnemonicParsing="false" text="Help">
@@ -32,8 +32,8 @@
           </MenuBar>
             <HBox alignment="TOP_RIGHT" fillHeight="false" maxHeight="29.0" maxWidth="60.0" spacing="8.0" StackPane.alignment="TOP_RIGHT">
                <children>
-                  <Button id="lowerWindowButton" fx:id="lowerWindowButton" mnemonicParsing="false" prefHeight="28.0" text="_" />
-                  <Button id="closeWindowButton" fx:id="closeWindowButton" mnemonicParsing="false" onAction="#closeWindow" prefHeight="28.0" text="X" />
+                  <Button id="lowerWindowButton" fx:id="btnLowerWindow" mnemonicParsing="false" onAction="#lowerWindow" prefHeight="28.0" text="_" />
+                  <Button id="closeWindowButton" fx:id="btnCloseWindow" mnemonicParsing="false" onAction="#closeWindow" prefHeight="28.0" text="X" />
                </children>
                <padding>
                   <Insets right="5.0" />

@@ -62,6 +62,12 @@ public class SegmentationController {
 	@FXML
 	private Button btnSelectPOSfile;
 	
+	@FXML
+	private Button btnCloseWindow;
+	
+	@FXML
+	private Button btnLowerWindow;
+	
 	/**
 	 * path for storage of file
 	 */
@@ -97,6 +103,14 @@ public class SegmentationController {
 		SegmentationMain.main(null);
 	}
 	
+	public void lowerWindow(){
+		Stage currentStage = (Stage) btnLowerWindow.getScene().getWindow();
+		currentStage.setIconified(true);
+	}
+	
+	public void closeWindow(){
+		System.exit(0);
+	}
 	
 	public void startSearchFile() {
 		
@@ -189,10 +203,6 @@ public class SegmentationController {
 				.getWindow();
 		currentStage.close();
 			
-	}
-	
-	public void closeWindow(){
-		System.exit(0);
 	}
 	
 	public void startManual(){
