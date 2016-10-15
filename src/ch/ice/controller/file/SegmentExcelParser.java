@@ -14,6 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import ch.ice.model.Segment;
+import ch.ice.view.SegmentationController;
 
 public class SegmentExcelParser {
 
@@ -74,9 +75,8 @@ public class SegmentExcelParser {
 	public ArrayList<Segment> readPOSFile() throws IOException {
 
 		// Where the Test file has to be located
-	
 
-		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/SPOSDES_Test.xlsx");
+		InputStream ExcelFileToRead = new FileInputStream(SegmentationController.POSfilePath);
 
 		XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
 
@@ -92,20 +92,12 @@ public class SegmentExcelParser {
 			if (row.getRowNum() == 0 || row.getRowNum() == 1 || row.getRowNum() == 2)
 				continue;
 			if (isRowEmpty(row)) {
-//
-//				int lastRowNum = sheet.getLastRowNum();
-//				int rowIndex = row.getRowNum();
-//				sheet.shiftRows(rowIndex + 1, lastRowNum, -1);
-//				rows = sheet.rowIterator();
-//				if (rowIndex == lastRowNum) {
-//					break;
-//				}
 				continue;
 			}
 			if (row.getRowNum() == 0 || row.getRowNum() == 1 || row.getRowNum() == 2)
 				continue;
 
-			Iterator cells = row.cellIterator();
+			Iterator<Cell> cells = row.cellIterator();
 			while (cells.hasNext()) {
 				cell = (XSSFCell) cells.next();
 				switch (cell.getColumnIndex()) {
@@ -151,7 +143,7 @@ public class SegmentExcelParser {
 				}
 			}
 		}
-
+		wb.close();
 		System.out.println("POS File Read");
 		return companiesPOS;
 
@@ -161,18 +153,15 @@ public class SegmentExcelParser {
 		// Where the Test file has to be located
 		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/Medical.xlsx");
 		XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
-
-		XSSFWorkbook test = new XSSFWorkbook();
-
 		XSSFSheet sheet = wb.getSheetAt(0);
 		XSSFRow row;
 		XSSFCell cell;
 
-		Iterator rows = sheet.rowIterator();
+		Iterator<Row> rows = sheet.rowIterator();
 
 		while (rows.hasNext()) {
 			row = (XSSFRow) rows.next();
-			Iterator cells = row.cellIterator();
+			Iterator<Cell> cells = row.cellIterator();
 			while (cells.hasNext()) {
 				cell = (XSSFCell) cells.next();
 				if (cell.getColumnIndex() >= 2)
@@ -202,7 +191,7 @@ public class SegmentExcelParser {
 			this.companiesRegister.add(this.createSegment());
 
 		}
-
+		wb.close();
 		System.out.println("Registry File read");
 		return companiesRegister;
 	}

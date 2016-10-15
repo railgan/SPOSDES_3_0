@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import ch.ice.model.Segment;
+import ch.ice.view.SegmentationController;
 
 public class SegmentExcelWriter {
 
@@ -25,8 +26,8 @@ public class SegmentExcelWriter {
 
 	public void writeXLSXFile(ArrayList<Segment> segmentCustomerList) throws IOException {
 
-		String excelFileName = "C:/Javatest/Segmented" + dateFormat.format(date) + ".xlsx";
-		String oldExcelFile = "C:/Javatest/SPOSDES_Test.xlsx";
+		String excelFileName = SegmentationController.saveToDirectoryPath+"/Segmented"+dateFormat.format(date)+".xlsx";
+		String oldExcelFile = SegmentationController.POSfilePath;
 		
 
 		int cellnum;
@@ -138,7 +139,7 @@ public class SegmentExcelWriter {
 
 		// write this workbook to an Outputstream.
 		wb.write(fileOut);
-
+		
 		fileOut.flush();
 		fileOut.close();
 
