@@ -1,4 +1,4 @@
-	package ch.ice;
+package ch.ice;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,23 +11,24 @@ import ch.ice.model.Segment;
 public class SegmentationMain {
 
 	public static void main(String[] args) throws IOException {
-						
-			
-			SegmentExcelParser Parser = new SegmentExcelParser();
-			
-			
-			ArrayList<String> ListPos2 = Parser.readPOSFile();
-			ArrayList<Segment> ListReg2 = Parser.readRegisterFile();
-			ListComparison Comparer = new ListComparison();
-			SegmentExcelWriter Writer = new SegmentExcelWriter();
-			ArrayList<Segment> ListSegmented= Comparer.compareLists(ListReg2, ListPos2);
-			
-			System.out.println("Time to Segment");
+
+		SegmentExcelParser Parser = new SegmentExcelParser();
+		SegmentExcelWriter writer = new SegmentExcelWriter();
+		ListComparison Comparer = new ListComparison();
+
+		ArrayList<Segment> listPOS = Parser.readPOSFile();
+		ArrayList<Segment> listReg = Parser.readRegisterFile();
+		ArrayList<Segment> listSegmented = Comparer.compareLists(listReg, listPOS);
+		listReg = null;
 		
-			Writer.writeXLSXFile(ListSegmented);
-			System.out.println("Done");
-			
-			
-			
+		System.out.println("Time to deduplicate");
+		listSegmented = Comparer.deDuplicate(listPOS, listSegmented);
+		listPOS = null;
+		System.out.println("Time to Segment");
+
+				
+		writer.writeXLSXFile(listSegmented);
+		System.out.println("Done");
+
 	}
 }
