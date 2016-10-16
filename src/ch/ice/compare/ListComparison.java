@@ -115,6 +115,7 @@ public class ListComparison {
 					d++;
 					dublicates++;
 					
+					
 				} else {
 					customers.get(d).setUnprocessedCompanyName(customers.get(d).getUnprocessedCompanyName() + ", "
 							+ customers.get(c).getUnprocessedCompanyName());
@@ -129,8 +130,6 @@ public class ListComparison {
 		}
 		System.out.println("Top down Duplicates count: " + dublicates + "\n Bottm up Duplicates count: " + dublicates2);
 		return segmentedCustomers;
-//		Top down Duplicates count: 638
-//		 Bottm up Duplicates count: 311
 
 	}
 

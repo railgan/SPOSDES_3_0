@@ -118,7 +118,7 @@ public class SegmentationController {
 			FileChooser fc = new FileChooser();
 			
 			// Pfad vordefinieren
-			fc.setInitialDirectory(new File ("C:\\Users\\Kevin"));
+			fc.setInitialDirectory(new File ("C:\\"));
 			// Nur Excel oder csv Dateien anzeigen
 			fc.getExtensionFilters().addAll(
 							new FileChooser.ExtensionFilter(
@@ -140,7 +140,7 @@ public class SegmentationController {
 				FileChooser fc = new FileChooser();
 				
 				// Pfad vordefinieren
-				fc.setInitialDirectory(new File ("C:\\Users\\Kevin"));
+				fc.setInitialDirectory(new File ("C:\\"));
 				// Nur Excel oder csv Dateien anzeigen
 				fc.getExtensionFilters().addAll(
 								new FileChooser.ExtensionFilter(

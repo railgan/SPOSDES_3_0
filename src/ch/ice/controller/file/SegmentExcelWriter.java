@@ -74,6 +74,7 @@ public class SegmentExcelWriter {
 		for (Segment object : segmentCustomerList){
 			row = sheet.getRow(rownum++);
 		if (isRowEmpty(row)) {
+		System.out.println("Removing Row: " +rownum);
 			int lastRowNum = sheet.getLastRowNum();
 			if (rownum < lastRowNum) {
 				sheet.shiftRows(rownum, lastRowNum, -1);
@@ -91,11 +92,10 @@ public class SegmentExcelWriter {
 
 		// iterating r number of rows
 		for (Segment object : segmentCustomerList) {
-			
+			System.out.println("Dealing with: " + object.getUnprocessedCompanyName());
 			if (object.isDublicate()) {
 				continue;
 			}
-			
 			levenDistance = object.getLevenDistance();
 			row = sheet.getRow(rownum++);
 			cell = sheet.getRow(row.getRowNum()).createCell(cellnum);
