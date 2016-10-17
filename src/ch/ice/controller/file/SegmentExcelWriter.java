@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -16,11 +17,14 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import ch.ice.model.Segment;
+import ch.ice.utils.Config;
 import ch.ice.view.SegmentationController;
 
 public class SegmentExcelWriter {
 
 	DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH");
+	
+	public static PropertiesConfiguration config = Config.PROPERTIES;
 
 	Date date = new Date();
 
@@ -32,9 +36,10 @@ public class SegmentExcelWriter {
 
 		int cellnum;
 		int rownum;
-		double segmentMargain = 0.01;
+		String margin = (String) config.getProperty("segmentation.segmentmargin");
+		double segmentMargain =  Double.parseDouble(margin);
 		double levenDistance;
-
+		
 		InputStream inp = new FileInputStream(oldExcelFile);
 		XSSFWorkbook wb = new XSSFWorkbook(inp);
 		System.out.println("ExcelFileRead");

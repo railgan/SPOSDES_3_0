@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -14,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import ch.ice.model.Segment;
+import ch.ice.utils.Config;
 import ch.ice.view.SegmentationController;
 
 public class SegmentExcelParser {
@@ -28,20 +30,36 @@ public class SegmentExcelParser {
 	}
 
 	// Variables in which SCHURTER's List of Companies can be found
+	public static PropertiesConfiguration config = Config.PROPERTIES;
+	
 	private String companyNamePOS;
 
 	private ArrayList<Segment> companiesPOS = new ArrayList<Segment>();
 
 	private ArrayList<Segment> companiesRegister = new ArrayList<Segment>();
-	private boolean removeSpecialCharacters = true;
+	
+	
+	private boolean removeSpecialCharacters;
 	private boolean removeCapitalLetters = true;
-
+	
 	private boolean exists = true;
 	private String companyName;
 	private String companySegment;
 	private String unprocessedCompanyName;
 
 	private String companyID;
+	
+	
+	// Read from app.properties
+	public void initialize(){
+		String removeSpecial = (String) config.getProperty("segmentation.removeSpecialCharakters");
+		if (removeSpecial.equals("true")){
+			removeSpecialCharacters = true;
+			}else{
+				removeSpecialCharacters = false;	
+			}
+	
+	}
 
 	private String checkForCellType(Cell cell) {
 

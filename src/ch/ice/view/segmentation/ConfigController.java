@@ -52,8 +52,8 @@ public class ConfigController {
 
 		// Read the configurtaion out of app.properties and set controls
 		// Textbox
-		String test = (String) config.getProperty("segmentation.segmentmargin");
-		txtSegmentMargin.setText(test);
+		String margin = (String) config.getProperty("segmentation.segmentmargin");
+		txtSegmentMargin.setText(margin);
 		
 		
 		
