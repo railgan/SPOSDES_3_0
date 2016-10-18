@@ -58,11 +58,8 @@ public class ConfigController {
 		// Read the configurtaion out of app.properties and set controls
 		// Textbox
 		String margin = (String) config.getProperty("segmentation.segmentmargin");
-		
-		
-		
-		
-		
+		txtSegmentMargin.setText(margin);
+				
 		// Read properties for setting the Checkboxes
 		String deduplicate = (String) config.getProperty("segmentation.deduplicate");
 		String removeSpecial = (String) config.getProperty("segmentation.removeSpecialCharakters");

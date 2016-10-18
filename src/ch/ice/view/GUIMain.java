@@ -87,43 +87,6 @@ public class GUIMain extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		// int initialDelay = 0; // start after 30 seconds
-		// int period = 1000;
-		// Timer timer = new Timer();
-		// TimerTask task = new TimerTask() {
-		// public void run() {
-		// System.out.println(internetCheck + "   " + bingCheck);
-
-		//externalNetCheck();
-
-		// }
-		// };
-		// timer.scheduleAtFixedRate(task, initialDelay, period);
-		
-		/*
-		Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
-
-		Scene scene = new Scene(root);
-
-		primaryStage
-				.setTitle("Schurter POS-Data-Enhancement System (SPOSDES) ");
-		primaryStage.setScene(scene);
-		primaryStage.initStyle(StageStyle.UNDECORATED);
-		primaryStage.show();
-		Timeline timeline = new Timeline();
-		timeline.getKeyFrames().add(
-				new KeyFrame(Duration.seconds(4),
-						new EventHandler<ActionEvent>() {
-
-							@Override
-							public void handle(ActionEvent event) {
-								primaryStage.hide();
-								loadMain();
-							}
-						}));
-		timeline.play();
-		*/
-		
 		try{
 			// Startmenue aufrufen
 			Stage primaryStage1 = new Stage();
