@@ -11,6 +11,7 @@ import org.apache.commons.configuration.ConfigurationException;
 
 import ch.ice.SegmentationMain;
 import ch.ice.controller.MainController;
+import ch.ice.controller.threads.SegmentationThread;
 import ch.ice.exceptions.InternalFormatException;
 import ch.ice.exceptions.MissingCustomerRowsException;
 import ch.ice.model.Customer;
@@ -99,11 +100,12 @@ public class SegmentationController {
 		//new File("C:/").exists();
 		
 		// Open Progress Window
+		
 		Stage primaryStage1 = new Stage();
 		primaryStage1.initStyle(StageStyle.UNDECORATED);
 		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/segmentation/ProgressSegmentation.fxml"));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/ch/ice/view/WebCrawler.css").toExternalForm());
 		primaryStage1.setScene(scene);
 		primaryStage1.show();
 		
@@ -112,8 +114,7 @@ public class SegmentationController {
 				.getWindow();
 		currentStage.close();
 		// Start Segmentation Function
-		SegmentationMain.main(null);
-		
+		SegmentationThread.main(null);
 	}
 	
 	public void lowerWindow(){

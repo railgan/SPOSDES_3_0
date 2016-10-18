@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import ch.ice.controller.MainController;
+import ch.ice.SegmentationMain;
 import ch.ice.model.Segment;
 import ch.ice.utils.Config;
 import ch.ice.view.SegmentationController;
@@ -78,7 +78,7 @@ public class SegmentExcelParser {
 		customer.setCompanyName(this.companyNamePOS);
 		customer.setId(this.companyID);
 		customer.setUnprocessedCompanyName(this.unprocessedCompanyName);
-		MainController.progressText = "Parsing Customer: " + this.companyNamePOS;
+		SegmentationMain.progressText = "Parsing Customer: " + this.companyNamePOS;
 		return customer;
 
 	}
@@ -88,7 +88,7 @@ public class SegmentExcelParser {
 		segment.setUnprocessedCompanyName(this.unprocessedCompanyName);
 		segment.setCompanyName(this.companyName);
 		segment.setCompanySegment(this.companySegment);
-		MainController.progressText = "Parsing Company: " + this.companyNamePOS;
+		SegmentationMain.progressText = "Parsing Company: " + this.companyNamePOS;
 		return segment;
 
 	}

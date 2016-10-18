@@ -13,9 +13,11 @@ import ch.ice.model.Segment;
 import ch.ice.utils.Config;
 
 public class SegmentationMain {
-	public static String progressText;
+	
+	public static String progressText = "Starting";
 	public static PropertiesConfiguration config = Config.PROPERTIES;
 	public static void main(String[] args) throws IOException {
+		
 		
 		SegmentExcelParser Parser = new SegmentExcelParser();
 		SegmentExcelWriter writer = new SegmentExcelWriter();
@@ -24,7 +26,7 @@ public class SegmentationMain {
 		ArrayList<Segment> listPOS = Parser.readPOSFile();
 		ArrayList<Segment> listReg = Parser.readRegisterFile();
 		
-		
+		System.out.println(progressText);
 		ArrayList<Segment> listSegmented = Comparer.compareLists(listReg, listPOS);
 		
 		listReg = null;

@@ -2,7 +2,7 @@ package ch.ice.compare;
 
 import java.util.ArrayList;
 
-import ch.ice.controller.MainController;
+import ch.ice.SegmentationMain;
 import ch.ice.controller.file.SegmentExcelParser;
 import ch.ice.model.Segment;
 
@@ -51,7 +51,7 @@ public class ListComparison {
 		for (int i = 0; i < listPos.size(); i++) {
 
 			posCompany = (listPos.get(i).getCompanyName());
-			MainController.progressText = "Comparing: " + posCompany;
+			SegmentationMain.progressText = "Comparing: " + posCompany;
 			exists = listPos.get(i).isExists();
 			if (exists == false) {
 				this.companyName = posCompany;
@@ -106,7 +106,7 @@ public class ListComparison {
 	public ArrayList<Segment> deDuplicate(ArrayList<Segment> customers, ArrayList<Segment> segmentedCustomers) {
 		int d = 1;
 		for (int c = 0; c < customers.size() - 1; c = d) {
-			MainController.progressText = "Detecting Duplicats: " + (customers.get(c).getUnprocessedCompanyName());
+			SegmentationMain.progressText = "Detecting Duplicats: " + (customers.get(c).getUnprocessedCompanyName());
 			d = c + 1;
 			while (customers.get(c).getId().equals(customers.get(d).getId())) {
 				if (segmentedCustomers.get(c).getLevenDistance() <= segmentedCustomers.get(d).getLevenDistance()) {
