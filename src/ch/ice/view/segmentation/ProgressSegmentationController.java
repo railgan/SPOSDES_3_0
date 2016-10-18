@@ -42,9 +42,7 @@ public class ProgressSegmentationController extends Thread implements Initializa
 
 
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("we doing");
-
-		 timer = new Timer(100,new ActionListener() {
+				 timer = new Timer(100,new ActionListener() {
 		       	@Override
 				public void actionPerformed(ActionEvent e) {
 		       		Platform.runLater(new Runnable() {
