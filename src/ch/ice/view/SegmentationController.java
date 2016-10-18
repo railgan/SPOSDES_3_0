@@ -95,12 +95,25 @@ public class SegmentationController {
 		
 		
 		// Check if Excel are really available
-		new File("path/to/file.txt").isFile();
-		new File("C:/").exists();
+		//new File("path/to/file.txt").isFile();
+		//new File("C:/").exists();
 		
+		// Open Progress Window
+		Stage primaryStage1 = new Stage();
+		primaryStage1.initStyle(StageStyle.UNDECORATED);
+		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/segmentation/ProgressSegmentation.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
+		primaryStage1.setScene(scene);
+		primaryStage1.show();
 		
+		// close current window
+		Stage currentStage = (Stage) btnCancel.getScene()
+				.getWindow();
+		currentStage.close();
 		// Start Segmentation Function
 		SegmentationMain.main(null);
+		
 	}
 	
 	public void lowerWindow(){

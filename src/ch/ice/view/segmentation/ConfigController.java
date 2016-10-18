@@ -23,8 +23,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -45,6 +47,9 @@ public class ConfigController {
 	@FXML
 	private TextField txtSegmentMargin;
 	
+	@FXML
+	private Label lblMargin;
+	
 	public static PropertiesConfiguration config = Config.PROPERTIES;
 	
 	// Properties laden
@@ -53,7 +58,8 @@ public class ConfigController {
 		// Read the configurtaion out of app.properties and set controls
 		// Textbox
 		String margin = (String) config.getProperty("segmentation.segmentmargin");
-		txtSegmentMargin.setText(margin);
+		
+		
 		
 		
 		
@@ -63,7 +69,7 @@ public class ConfigController {
 		
 		
 		
-		if ( deduplicate.equals("true")){
+		if (deduplicate.equals("true")){
 		chbDeduplicate.setSelected(true);
 		
 		}else{
@@ -128,32 +134,46 @@ public class ConfigController {
 	}
 	
 	// Back to Segmentation-Window
-	public void safeConfiguration() throws IOException{
+	public void safeConfiguration() throws IOException, NumberFormatException, ConfigurationException{
 	
 		// Save configuration to XML File
 				try {
-					// Safe Checkboxes
-					if (chbDeduplicate.isSelected() == true){
-						config.setProperty("segmentation.deduplicate", "true");
-					}	else{
-							config.setProperty("segmentation.deduplicate", "false");
+					// Overall Check
+					String margin = txtSegmentMargin.getText();
+					
+					// First check if it is a number in the TextField
+					double dbl_margin = Double.parseDouble(margin);
+					
+					if(dbl_margin <= 1.000 && dbl_margin >=0.000){
+						
+						// Safe Checkboxes
+						if (chbDeduplicate.isSelected() == true){
+							config.setProperty("segmentation.deduplicate", "true");
+						}	else{
+								config.setProperty("segmentation.deduplicate", "false");
+						}
+						
+						if (chbRemoveSpecialCharakters.isSelected()){
+							config.setProperty("segmentation.removeSpecialCharakters", "true");
+						}	else{
+								config.setProperty("segmentation.removeSpecialCharakters", "false");
+						}
+						// Safe Textbox
+						config.setProperty("segmentation.segmentmargin", txtSegmentMargin.getText());
+						config.save();
+						startSegmentationMenue();
+					}else{
+						
 					}
 					
-					if (chbRemoveSpecialCharakters.isSelected()){
-						config.setProperty("segmentation.removeSpecialCharakters", "true");
-					}	else{
-							config.setProperty("segmentation.removeSpecialCharakters", "false");
-					}
-					// Safe Textbox
-					config.setProperty("segmentation.segmentmargin", txtSegmentMargin.getText());
-					config.save();
-					
-					
-				} catch (ConfigurationException e) {
+				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					lblMargin.setText("Margin value has to be a number between 0.00 and 1.00");
+					lblMargin.setTextFill(Color.RED);
 				}
-				
+	}
+	public void startSegmentationMenue() throws IOException{
 		// Load Segmentation window
 		Stage primaryStage = new Stage();
 		primaryStage.initStyle(StageStyle.UNDECORATED);

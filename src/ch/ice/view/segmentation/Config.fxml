@@ -35,12 +35,13 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSegmentMargin" layoutX="195.0" layoutY="238.0" prefHeight="25.0" prefWidth="41.0" />
+      <TextField fx:id="txtSegmentMargin" alignment="CENTER" layoutX="195.0" layoutY="238.0" maxWidth="50.0" prefHeight="25.0" prefWidth="50.0" />
       <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="241.0" text="Segmentation Margin">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
       <Separator layoutX="13.0" layoutY="191.0" prefHeight="0.0" prefWidth="375.0" />
+      <Label fx:id="lblMargin" layoutX="21.0" layoutY="274.0" />
    </children>
 </AnchorPane>

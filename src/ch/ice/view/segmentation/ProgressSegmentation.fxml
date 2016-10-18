@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="560.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.segmentation.ProgressSegmentationController">
+   <children>
+      <Button fx:id="btnCancel" layoutX="133.0" layoutY="187.0" mnemonicParsing="false" text="Cancel" />
+      <Button fx:id="btnClose" layoutX="400.0" layoutY="187.0" mnemonicParsing="false" text="Close" />
+      <Button fx:id="btnOpenFile" layoutX="228.0" layoutY="187.0" mnemonicParsing="false" text="Open segmented File" />
+      <Label fx:id="lblStatusObject" layoutX="280.0" layoutY="50.0" prefHeight="65.0" prefWidth="129.0" text="Objekt" />
+      <ProgressBar fx:id="progressbar" layoutX="29.0" layoutY="140.0" prefHeight="18.0" prefWidth="503.0" progress="0.0" />
+      <ListView fx:id="lstStatusPhase" layoutX="133.0" layoutY="25.0" prefHeight="98.0" prefWidth="94.0" />
+   </children>
+</AnchorPane>
