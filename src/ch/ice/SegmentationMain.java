@@ -15,6 +15,8 @@ import ch.ice.utils.Config;
 public class SegmentationMain {
 	
 	public static double progressPercent = 0;
+	public static int amountSegmented = 0;
+	public static int amountDuplicate = 0;
 	public static String progressText = "Starting";
 	public static PropertiesConfiguration config = Config.PROPERTIES;
 	public static void main(String[] args) throws IOException {
@@ -31,27 +33,20 @@ public class SegmentationMain {
 		ArrayList<Segment> listReg = Parser.readRegisterFile();
 		progressPercent = 0.03;
 		
-		System.out.println(progressText);
 		ArrayList<Segment> listSegmented = Comparer.compareLists(listReg, listPOS);
 		
 		
 		listReg = null;
 		
-		System.out.println("Time to deduplicate");
 		
 		String deduplicate = (String) config.getProperty("segmentation.deduplicate");
-		if ( deduplicate.equals("true")){
+		if (deduplicate.equals("true")){
 			listSegmented = Comparer.deDuplicate(listPOS, listSegmented);
-			}else{
-				System.out.println("Es wird nich dedupliziert");
 			}
 		listPOS = null;
-		System.out.println("Time to Segment");
 
 				
 		writer.writeXLSXFile(listSegmented);
 		progressPercent = 1;
-		System.out.println("Done");
-
 	}
 }

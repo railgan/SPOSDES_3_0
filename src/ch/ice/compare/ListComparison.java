@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import ch.ice.SegmentationMain;
 import ch.ice.controller.file.SegmentExcelParser;
 import ch.ice.model.Segment;
+import ch.ice.utils.Config;
+import org.apache.commons.configuration.PropertiesConfiguration;
 
 public class ListComparison {
 	public String posCompany;
@@ -16,10 +18,12 @@ public class ListComparison {
 
 	public Segment regSegment;
 
+	
 	public int dublicates;
 	public int dublicates2;
-	public int medical;
+	public int segmented;
 	public int othercompanies;
+
 	public double stringDistance;
 	public double minStringDistance = 1;
 	public int indexOfBestResult;
@@ -43,11 +47,15 @@ public class ListComparison {
 		return singleSegment;
 
 	}
-
+	public static PropertiesConfiguration config = Config.PROPERTIES;
+	
 	public ArrayList<Segment> compareLists(ArrayList<Segment> Register, ArrayList<Segment> listPos) {
+		
+		String margin = (String) config.getProperty("segmentation.segmentmargin");
+		
+		double segmentMargain =  Double.parseDouble(margin);
 		regList = readCompanyName(Register);
 
-		System.out.println("Now we are comparing Lists");
 		for (int i = 0; i < listPos.size(); i++) {
 
 			posCompany = (listPos.get(i).getCompanyName());
@@ -73,8 +81,8 @@ public class ListComparison {
 					this.companySegment = Register.get(indexOfBestResult).getCompanySegment();
 					this.unprocessedCompanyName = Register.get(indexOfBestResult).getUnprocessedCompanyName();
 
-					if (minStringDistance <= 0.01) {
-						medical++;
+					if (minStringDistance <= segmentMargain) {
+						segmented++;
 					}
 					segmentedList.add(i, this.createSingleSegment());
 					minStringDistance = 1;
@@ -84,10 +92,7 @@ public class ListComparison {
 
 		}
 
-		System.out.println("Amount Segmented: " + medical + ";\nAmount Unsegmented: " + othercompanies
-				+ ";\nRegister Size: " + Register.size() + ";\nTotal Amount of Companies: " + listPos.size()
-				+ ";\nSegmented List size: " + segmentedList.size());
-
+		
 		return segmentedList;
 	}
 
@@ -97,8 +102,6 @@ public class ListComparison {
 			regList.add(j, regCompany);
 
 		}
-
-		System.out.println("CompanyNamesRead");
 
 		return regList;
 
@@ -128,7 +131,7 @@ public class ListComparison {
 					customers.get(d).setUnprocessedCompanyName(customers.get(d).getUnprocessedCompanyName() + ", "
 							+ customers.get(c).getUnprocessedCompanyName());
 					segmentedCustomers.get(d).setCompanyName(customers.get(d).getUnprocessedCompanyName());
-					dublicates2++;
+					dublicates++;
 					segmentedCustomers.get(d).setNewCompanyName(true);
 					segmentedCustomers.get(c).setDublicate(true);
 					break;
@@ -136,7 +139,7 @@ public class ListComparison {
 
 			}
 		}
-		System.out.println("Top down Duplicates count: " + dublicates + "\n Bottm up Duplicates count: " + dublicates2);
+		SegmentationMain.amountDuplicate = dublicates;
 		return segmentedCustomers;
 
 	}

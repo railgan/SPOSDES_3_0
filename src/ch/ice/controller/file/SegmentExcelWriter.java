@@ -43,9 +43,9 @@ public class SegmentExcelWriter {
 		
 		InputStream inp = new FileInputStream(oldExcelFile);
 		XSSFWorkbook wb = new XSSFWorkbook(inp);
-		System.out.println("ExcelFileRead");
+		
 		XSSFSheet sheet = wb.getSheetAt(0);
-		System.out.println("found wb Sheet");
+		
 
 		rownum = 3;
 		cellnum = 11;
@@ -70,13 +70,12 @@ public class SegmentExcelWriter {
 
 				if (object.isDublicate()) {
 					SegmentationMain.progressText = "Removing Duplicate: "+ object.getCompanyName();
-					System.out.println("Dublicate found: " +object.getCompanyName());
+					
 					sheet.removeRow(row);
 					continue;
 				}
 			}
 		}
-		System.out.println("Duplicates deleted");
 		rownum = 3;
 			
 		for (Segment object : segmentCustomerList){
@@ -84,7 +83,7 @@ public class SegmentExcelWriter {
 			row = sheet.getRow(rownum++);
 		if (isRowEmpty(row)) {
 		SegmentationMain.progressText = "Removing empty Row: "+ rownum;
-		System.out.println("Removing Row: " +rownum);
+	
 			int lastRowNum = sheet.getLastRowNum();
 			if (rownum < lastRowNum) {
 				sheet.shiftRows(rownum, lastRowNum, -1);
@@ -93,7 +92,6 @@ public class SegmentExcelWriter {
 		}
 		}
 		rownum = 3;
-		System.out.println("Empty Row's removed");
 		
 
 		rownum = 3;
@@ -142,7 +140,7 @@ public class SegmentExcelWriter {
 		sheet.setColumnWidth(9, 2000);
 		sheet.setColumnWidth(10, 2000);
 		SegmentationMain.progressText = "Writing File";
-		System.out.println("Ready for fileOut");
+		
 
 		FileOutputStream fileOut = new FileOutputStream(excelFileName);
 

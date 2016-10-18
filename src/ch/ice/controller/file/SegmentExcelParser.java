@@ -165,7 +165,6 @@ public class SegmentExcelParser {
 			}
 		}
 		
-		System.out.println("POS File Read");
 		return companiesPOS;
 
 	}
@@ -212,7 +211,6 @@ public class SegmentExcelParser {
 			this.companiesRegister.add(this.createSegment());
 
 		}
-		System.out.println("Registry File read");
 		return companiesRegister;
 	}
 
