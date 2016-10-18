@@ -172,6 +172,7 @@ public class GUIController implements Initializable {
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
 		primaryStage1.setScene(scene);
+		primaryStage1.initStyle(StageStyle.UNDECORATED);
 		primaryStage1.show();
 		
 		// close current window
