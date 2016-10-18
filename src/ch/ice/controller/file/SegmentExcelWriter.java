@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import ch.ice.controller.MainController;
 import ch.ice.model.Segment;
 import ch.ice.view.SegmentationController;
 
@@ -53,6 +54,7 @@ public class SegmentExcelWriter {
 		cell.setCellValue("Comparison Name");
 
 		for (Segment object : segmentCustomerList){
+			
 			row = sheet.getRow(rownum++);
 			if (object.isExists()) {
 				if (object.getLevenDistance() <= segmentMargain) {
@@ -62,6 +64,7 @@ public class SegmentExcelWriter {
 				}
 
 				if (object.isDublicate()) {
+					MainController.progressText = "Removing Duplicate: "+ object.getCompanyName();
 					System.out.println("Dublicate found: " +object.getCompanyName());
 					sheet.removeRow(row);
 					continue;
@@ -74,6 +77,7 @@ public class SegmentExcelWriter {
 		for (Segment object : segmentCustomerList){
 			row = sheet.getRow(rownum++);
 		if (isRowEmpty(row)) {
+		MainController.progressText = "Removing empty Row: "+ rownum;
 		System.out.println("Removing Row: " +rownum);
 			int lastRowNum = sheet.getLastRowNum();
 			if (rownum < lastRowNum) {
@@ -85,13 +89,12 @@ public class SegmentExcelWriter {
 		rownum = 3;
 		System.out.println("Empty Row's removed");
 		
-		
-		
-		
+
 		rownum = 3;
 
 		// iterating r number of rows
 		for (Segment object : segmentCustomerList) {
+			MainController.progressText = "Writing Customer: "+ object.getCompanyName();
 			System.out.println("Dealing with: " + object.getUnprocessedCompanyName());
 			if (object.isDublicate()) {
 				continue;
@@ -132,7 +135,7 @@ public class SegmentExcelWriter {
 		sheet.setColumnWidth(8, 2000);
 		sheet.setColumnWidth(9, 2000);
 		sheet.setColumnWidth(10, 2000);
-
+		MainController.progressText = "Writing File";
 		System.out.println("Ready for fileOut");
 
 		FileOutputStream fileOut = new FileOutputStream(excelFileName);
@@ -142,6 +145,7 @@ public class SegmentExcelWriter {
 		
 		fileOut.flush();
 		fileOut.close();
+		MainController.progressText = "Done";
 
 	}
 
