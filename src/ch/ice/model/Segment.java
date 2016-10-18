@@ -1,5 +1,9 @@
 package ch.ice.model;
-
+/**
+ * The Object's used in Segmentation
+ * @author Mike
+ *
+ */
 public class Segment {
 
 	private String id;

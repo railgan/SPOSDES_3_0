@@ -4,17 +4,24 @@ import java.io.IOException;
 
 import ch.ice.SegmentationMain;
 
-public class SegmentationThread extends Thread{
-	
+/**
+ * Starts a Thread of the Segmentation main... that's all
+ * 
+ * @author Mike
+ *
+ */
+public class SegmentationThread extends Thread {
+
 	public static void main(String args[]) throws IOException {
-		 (new SegmentationThread()).start();
-        
-}
+		(new SegmentationThread()).start();
+
+	}
+
 	public void run() {
 		try {
 			SegmentationMain.main(null);
 		} catch (IOException e) {
-		e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 }
