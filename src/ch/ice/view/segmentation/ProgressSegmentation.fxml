@@ -12,7 +12,7 @@
       <Button fx:id="btnCancel" layoutX="133.0" layoutY="187.0" mnemonicParsing="false" text="Cancel" />
       <Button fx:id="btnClose" layoutX="400.0" layoutY="187.0" mnemonicParsing="false" text="Close" />
       <Button fx:id="btnOpenFile" layoutX="228.0" layoutY="187.0" mnemonicParsing="false" text="Open segmented File" />
-      <Label fx:id="lblStatusObject" layoutX="244.0" layoutY="50.0" prefHeight="65.0" prefWidth="300.0" text="dasdasd" wrapText="true" />
+      <Label fx:id="lblStatusObject" layoutX="244.0" layoutY="50.0" prefHeight="65.0" prefWidth="300.0" text="Starting" wrapText="true" />
       <ProgressBar fx:id="progressbar" layoutX="29.0" layoutY="140.0" prefHeight="18.0" prefWidth="503.0" progress="0.0" />
       <ListView fx:id="lstStatusPhase" layoutX="133.0" layoutY="25.0" prefHeight="98.0" prefWidth="94.0" />
    </children>

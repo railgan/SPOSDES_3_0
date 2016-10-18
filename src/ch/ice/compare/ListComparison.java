@@ -106,7 +106,7 @@ public class ListComparison {
 
 	public ArrayList<Segment> deDuplicate(ArrayList<Segment> customers, ArrayList<Segment> segmentedCustomers) {
 		int d = 1;
-		for (int c = 0; c < customers.size() - 1; c = d) {
+		for (int c = 0; c < customers.size()-1; c = d) {
 			SegmentationMain.progressPercent = 0.15/customers.size()*c+0.35;
 			SegmentationMain.progressText = "Detecting Duplicats: " + (customers.get(c).getUnprocessedCompanyName());
 			d = c + 1;
@@ -117,6 +117,9 @@ public class ListComparison {
 					segmentedCustomers.get(c).setCompanyName(customers.get(c).getUnprocessedCompanyName());					
 					segmentedCustomers.get(c).setNewCompanyName(true);
 					segmentedCustomers.get(d).setDublicate(true);
+					if(d == customers.size()-1){
+						break;
+					}
 					d++;
 					dublicates++;
 					
