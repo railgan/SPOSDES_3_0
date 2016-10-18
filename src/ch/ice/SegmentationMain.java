@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import ch.ice.compare.ListComparison;
 import ch.ice.controller.file.SegmentExcelParser;
 import ch.ice.controller.file.SegmentExcelWriter;
 import ch.ice.model.Segment;
+import ch.ice.utils.Config;
 
 public class SegmentationMain {
 	public static String progressText;
