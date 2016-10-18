@@ -3,6 +3,7 @@ package ch.ice;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +14,7 @@ import ch.ice.model.Segment;
 
 public class SegmentationMain {
 	public static String progressText;
+	public static PropertiesConfiguration config = Config.PROPERTIES;
 	public static void main(String[] args) throws IOException {
 		
 		SegmentExcelParser Parser = new SegmentExcelParser();
@@ -28,8 +30,13 @@ public class SegmentationMain {
 		listReg = null;
 		
 		System.out.println("Time to deduplicate");
-		listSegmented = Comparer.deDuplicate(listPOS, listSegmented);
 		
+		String deduplicate = (String) config.getProperty("segmentation.deduplicate");
+		if ( deduplicate.equals("true")){
+			listSegmented = Comparer.deDuplicate(listPOS, listSegmented);
+			}else{
+				System.out.println("Es wird nich dedupliziert");
+			}
 		listPOS = null;
 		System.out.println("Time to Segment");
 
