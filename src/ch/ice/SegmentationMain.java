@@ -14,20 +14,26 @@ import ch.ice.utils.Config;
 
 public class SegmentationMain {
 	
+	public static double progressPercent = 0;
 	public static String progressText = "Starting";
 	public static PropertiesConfiguration config = Config.PROPERTIES;
 	public static void main(String[] args) throws IOException {
 		
 		
 		SegmentExcelParser Parser = new SegmentExcelParser();
+		
 		SegmentExcelWriter writer = new SegmentExcelWriter();
 		ListComparison Comparer = new ListComparison();
+		progressPercent = 0.01;
 
 		ArrayList<Segment> listPOS = Parser.readPOSFile();
+		progressPercent = 0.02;
 		ArrayList<Segment> listReg = Parser.readRegisterFile();
+		progressPercent = 0.03;
 		
 		System.out.println(progressText);
 		ArrayList<Segment> listSegmented = Comparer.compareLists(listReg, listPOS);
+		
 		
 		listReg = null;
 		
@@ -44,6 +50,7 @@ public class SegmentationMain {
 
 				
 		writer.writeXLSXFile(listSegmented);
+		progressPercent = 1;
 		System.out.println("Done");
 
 	}

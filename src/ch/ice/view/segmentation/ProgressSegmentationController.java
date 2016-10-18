@@ -2,29 +2,18 @@ package ch.ice.view.segmentation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javax.swing.Timer;
 
 import ch.ice.SegmentationMain;
-import ch.ice.controller.MainController;
-import ch.ice.controller.threads.SegmentationThread;
-import ch.ice.exceptions.InternalFormatException;
-import ch.ice.exceptions.MissingCustomerRowsException;
 import javafx.application.Platform;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.stage.Stage;
-import sun.awt.RepaintArea;
 
 public class ProgressSegmentationController extends Thread implements Initializable{
 
@@ -62,6 +51,7 @@ public class ProgressSegmentationController extends Thread implements Initializa
 							@Override
 							public void run() {
 		       		lblStatusObject.setText(SegmentationMain.progressText.toString());
+		       		progressbar.setProgress(SegmentationMain.progressPercent);
 		            if(i==100){
 		            	if(SegmentationMain.progressText.equals("Done")){
 		            		 timer.stop();

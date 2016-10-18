@@ -59,7 +59,7 @@ public class SegmentExcelWriter {
 		cell.setCellValue("Comparison Name");
 
 		for (Segment object : segmentCustomerList){
-			
+			SegmentationMain.progressPercent = 0.15/segmentCustomerList.size()*rownum+0.5;
 			row = sheet.getRow(rownum++);
 			if (object.isExists()) {
 				if (object.getLevenDistance() <= segmentMargain) {
@@ -80,6 +80,7 @@ public class SegmentExcelWriter {
 		rownum = 3;
 			
 		for (Segment object : segmentCustomerList){
+			SegmentationMain.progressPercent = 0.15/segmentCustomerList.size()*rownum+0.65;
 			row = sheet.getRow(rownum++);
 		if (isRowEmpty(row)) {
 		SegmentationMain.progressText = "Removing empty Row: "+ rownum;
@@ -99,8 +100,8 @@ public class SegmentExcelWriter {
 
 		// iterating r number of rows
 		for (Segment object : segmentCustomerList) {
+			SegmentationMain.progressPercent = 0.15/segmentCustomerList.size()*rownum+0.8;
 			SegmentationMain.progressText = "Writing Customer: "+ object.getCompanyName();
-			System.out.println("Dealing with: " + object.getUnprocessedCompanyName());
 			if (object.isDublicate()) {
 				continue;
 			}
@@ -133,7 +134,7 @@ public class SegmentExcelWriter {
 				cell.setCellValue("no company name provided");
 			}
 		}
-
+		SegmentationMain.progressText = "Formatting the Sheet";
 		for (int i = 0; i < 20; i++)
 			sheet.autoSizeColumn(i);
 		sheet.setColumnWidth(6, 2000);

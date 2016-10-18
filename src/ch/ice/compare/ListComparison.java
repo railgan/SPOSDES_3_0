@@ -51,6 +51,7 @@ public class ListComparison {
 		for (int i = 0; i < listPos.size(); i++) {
 
 			posCompany = (listPos.get(i).getCompanyName());
+			SegmentationMain.progressPercent = 0.3/listPos.size()*i+0.04;
 			SegmentationMain.progressText = "Comparing: " + posCompany;
 			exists = listPos.get(i).isExists();
 			if (exists == false) {
@@ -106,6 +107,7 @@ public class ListComparison {
 	public ArrayList<Segment> deDuplicate(ArrayList<Segment> customers, ArrayList<Segment> segmentedCustomers) {
 		int d = 1;
 		for (int c = 0; c < customers.size() - 1; c = d) {
+			SegmentationMain.progressPercent = 0.15/customers.size()*c+0.35;
 			SegmentationMain.progressText = "Detecting Duplicats: " + (customers.get(c).getUnprocessedCompanyName());
 			d = c + 1;
 			while (customers.get(c).getId().equals(customers.get(d).getId())) {
