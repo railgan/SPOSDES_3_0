@@ -53,6 +53,9 @@ public class ProgressSegmentationController extends Thread implements Initializa
 	
 	@FXML
 	private Label lblAmountDuplicate;
+	
+	@FXML
+	private Label lblAmountRows;
 
 	public boolean working = true;
 
@@ -67,7 +70,7 @@ public class ProgressSegmentationController extends Thread implements Initializa
 		btnClose.setText("Cancel");
 		
 		// Constatly updates the GUI
-		timer = new Timer(100, new ActionListener() {
+		timer = new Timer(100, new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Platform.runLater(new Runnable() {
@@ -88,9 +91,10 @@ public class ProgressSegmentationController extends Thread implements Initializa
 						
 						progressbar.setProgress(SegmentationMain.progressPercent);
 						
-						// labels
+						// update labels 
 						lblAmountSegmented.setText(""+SegmentationMain.amountSegmented);
 						lblAmountDuplicate.setText(""+SegmentationMain.amountDuplicate );
+						// lblAmountRows.setText(SegmentationMain.currentRows " of "+SegmentationMain.amountRows)
 
 
 						// Checks if the Program is done else Restarts
