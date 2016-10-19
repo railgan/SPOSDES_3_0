@@ -120,14 +120,14 @@ public class SegmentationController {
 				lblSegmentationFile.setText("Please select a file!");
 				lblSegmentationFile.setTextFill(Color.RED);
 				}else{
-					lblPOSFile.setText("");
+					lblSegmentationFile.setText("");
 				}
 			
 			if(saveToDirectoryPath.equals("")){
 				lblSaveTo.setText("Please select a folder!");
 				lblSaveTo.setTextFill(Color.RED);
 			}else{
-				lblPOSFile.setText("");
+				lblSaveTo.setText("");
 			}
 		}else{
 
