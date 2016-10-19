@@ -53,6 +53,9 @@ public class ProgressSegmentationController extends Thread implements Initializa
 	private Label lblAmountSegmented;
 	
 	@FXML
+	private Label lblAmountSegmented11;
+	
+	@FXML
 	private Label lblAmountDuplicate;
 	
 	@FXML
@@ -98,7 +101,7 @@ public class ProgressSegmentationController extends Thread implements Initializa
 						// update labels 
 						lblAmountSegmented.setText(""+SegmentationMain.amountSegmented);
 						lblAmountDuplicate.setText(""+SegmentationMain.amountDuplicate );
-						// lblAmountRows.setText(SegmentationMain.currentRows " of "+SegmentationMain.amountRows)
+						lblAmountRows.setText("" + SegmentationMain.currentRows+ " of "+SegmentationMain.amountRows);
 
 
 						// Checks if the Program is done else Restarts

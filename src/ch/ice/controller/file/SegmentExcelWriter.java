@@ -72,10 +72,14 @@ public class SegmentExcelWriter {
 		cell.setCellValue("Distance");
 		cell = sheet.getRow(row.getRowNum()).createCell(13);
 		cell.setCellValue("Comparison Name");
+		//GUI Variable
+		SegmentationMain.amountRows = segmentCustomerList.size();
 
 		for (Segment object : segmentCustomerList) {
 			// GUI Display of progressbar
 			SegmentationMain.progressPercent = 0.15 / segmentCustomerList.size() * rownum + 0.5;
+			//GUI Variable
+			SegmentationMain.currentRows = rownum;
 			// Get's current row
 			row = sheet.getRow(rownum++);
 			// Checks if the Object exists (not empty / null)
@@ -102,6 +106,8 @@ public class SegmentExcelWriter {
 		for (Segment object : segmentCustomerList) {
 			// GUI Display of Progressbar
 			SegmentationMain.progressPercent = 0.15 / segmentCustomerList.size() * rownum + 0.65;
+			//GUI Variable
+			SegmentationMain.currentRows = rownum;
 			// Get's current Row
 			row = sheet.getRow(rownum++);
 			// Checks if row is empty
@@ -134,6 +140,8 @@ public class SegmentExcelWriter {
 			// Gets the objects Distance
 			levenDistance = object.getLevenDistance();
 			// Gets the current row
+			//GUI Variable
+			SegmentationMain.currentRows = rownum;
 			row = sheet.getRow(rownum++);
 			cell = sheet.getRow(row.getRowNum()).createCell(cellnum);
 

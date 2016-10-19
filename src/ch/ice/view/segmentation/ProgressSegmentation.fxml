@@ -19,8 +19,8 @@
       <Label fx:id="lblAmountDuplicate" layoutX="275.0" layoutY="102.0" />
       <Label fx:id="lblAmountSegmented1" layoutX="29.0" layoutY="69.0" text="Amount of Segmented Customers:" />
       <Label fx:id="lblAmountSegmented2" layoutX="29.0" layoutY="97.0" text="Amount of Duplicate Customers:" />
-      <Label fx:id="lblAmountSegmented11" layoutX="29.0" layoutY="40.0" text="Compared Customers:" />
-      <ImageView fitHeight="61.0" fitWidth="183.0" layoutX="349.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="lblAmountSegmented11" layoutX="29.0" layoutY="40.0" text="Current Customer:" />
+      <ImageView fitHeight="61.0" fitWidth="183.0" layoutX="363.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Pictures/Schurter300only.png" />
          </image>

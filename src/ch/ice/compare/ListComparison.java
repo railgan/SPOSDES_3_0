@@ -79,10 +79,13 @@ public class ListComparison {
 		// Reads all names from Register into a seperate ArrayList
 
 		regList = readCompanyName(Register);
+		//GUI Variable
+		SegmentationMain.amountRows = listPos.size();
 
 		// goes through every POS Customer
 		for (int i = 0; i < listPos.size(); i++) {
-
+			//GUI Variable
+			SegmentationMain.currentRows = i+1;
 			// the current customer
 			posCompany = (listPos.get(i).getCompanyName());
 			// GUI Display Info
@@ -164,8 +167,13 @@ public class ListComparison {
 	public ArrayList<Segment> deDuplicate(ArrayList<Segment> customers, ArrayList<Segment> segmentedCustomers) {
 		// initialize d
 		int d = 1;
+		//GUI Variable
+		SegmentationMain.amountRows = customers.size();
+		
 		// goes through all POS Customer
 		for (int c = 0; c < customers.size() - 1; c = d) {
+			//GUI Variable
+			SegmentationMain.currentRows = c+1;
 			// GUI Text
 			SegmentationMain.progressPercent = 0.15 / customers.size() * c + 0.35;
 			SegmentationMain.progressText = "Detecting Duplicats: " + (customers.get(c).getUnprocessedCompanyName());

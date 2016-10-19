@@ -134,6 +134,8 @@ public class SegmentExcelParser {
 		XSSFRow row;
 		XSSFCell cell;
 		Iterator<Row> rows = sheet.rowIterator();
+		//GUI Variable
+		SegmentationMain.amountRows = sheet.getLastRowNum();
 
 		// Iterates all Rows
 		while (rows.hasNext()) {
@@ -190,6 +192,8 @@ public class SegmentExcelParser {
 						this.companiesPOS.add(this.createCustomer());
 						exists = true;
 					}
+					//GUI Variable
+					SegmentationMain.currentRows = this.companiesPOS.size();
 					break;
 				}
 			}
@@ -214,6 +218,9 @@ public class SegmentExcelParser {
 		XSSFRow row;
 		XSSFCell cell;
 		Iterator<Row> rows = sheet.rowIterator();
+		
+		//GUI Variable
+		SegmentationMain.amountRows = sheet.getLastRowNum();
 
 		// Iterates every Row
 		while (rows.hasNext()) {
@@ -245,7 +252,8 @@ public class SegmentExcelParser {
 			}
 			// Add the Segment to the List
 			this.companiesRegister.add(this.createSegment());
-
+			//GUI Variable
+			SegmentationMain.currentRows = this.companiesRegister.size();
 		}
 		return companiesRegister;
 	}

@@ -19,6 +19,8 @@ import ch.ice.utils.Config;
  */
 public class SegmentationMain {
 	// Variables displayed in ProgressSegmentation GUI
+	public static int amountRows = 0;
+	public static int currentRows = 0;
 	public static double progressPercent = 0;
 	public static int amountSegmented = 0;
 	public static int amountDuplicate = 0;
