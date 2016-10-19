@@ -50,7 +50,7 @@ public class StartmenueController {
 				primaryStage.initStyle(StageStyle.UNDECORATED);
 				Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Segmentation.fxml"));
 				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("Webcrawler.css").toExternalForm());
+				scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
 				
