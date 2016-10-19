@@ -121,7 +121,7 @@ public class ListComparison {
 					this.unprocessedCompanyName = Register.get(indexOfBestResult).getUnprocessedCompanyName();
 					// Used for GUI Display
 					if (minStringDistance <= segmentMargain) {
-						segmented++;
+						SegmentationMain.amountSegmented++;
 					}
 					// Add's the new object to the list
 					segmentedList.add(i, this.createSingleSegment());
