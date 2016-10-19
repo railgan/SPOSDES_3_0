@@ -53,17 +53,11 @@ public class ProgressSegmentationController extends Thread implements Initializa
 	private Label lblAmountSegmented;
 	
 	@FXML
-	private Label lblAmountSegmented11;
-	
-	@FXML
 	private Label lblAmountDuplicate;
 	
 	@FXML
 	private Label lblAmountRows;
 	
-	@FXML
-	private ImageView imgViewSchurter;
-
 	public boolean working = true;
 
 	public Timer timer;
