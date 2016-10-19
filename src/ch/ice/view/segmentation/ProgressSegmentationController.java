@@ -13,6 +13,7 @@ import javax.swing.Timer;
 import ch.ice.SegmentationMain;
 import ch.ice.controller.threads.SegmentationThread;
 import ch.ice.view.SegmentationController;
+import ch.ice.view.WelcomeController;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -58,12 +60,20 @@ public class ProgressSegmentationController extends Thread implements Initializa
 	@FXML
 	private Label lblAmountRows;
 	
+	@FXML
+	private ImageView imageViewSchurter;
+	
 	public boolean working = true;
 
 	public Timer timer;
 	int i = 0;
 
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		// load picture
+		Image schurterLogo = new Image(
+				WelcomeController.class.getResourceAsStream("/Schurter300only.png"));
+		imageViewSchurter.setImage(schurterLogo);
 		
 		// Buttons deactivated
 		btnOpenFile.setDisable(true);
