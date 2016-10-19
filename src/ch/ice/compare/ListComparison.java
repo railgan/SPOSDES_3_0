@@ -189,7 +189,7 @@ public class ListComparison {
 					// next
 					d++;
 					// GUI data
-					dublicates++;
+					SegmentationMain.amountDuplicate++;
 
 				} else {
 					// Add's c's name to d
@@ -197,7 +197,7 @@ public class ListComparison {
 							+ customers.get(c).getUnprocessedCompanyName());
 					segmentedCustomers.get(d).setCompanyName(customers.get(d).getUnprocessedCompanyName());
 					// GUI Data
-					dublicates++;
+					SegmentationMain.amountDuplicate++;
 					/// Variables used in write to remove / write customers
 					segmentedCustomers.get(d).setNewCompanyName(true);
 					segmentedCustomers.get(c).setDublicate(true);
@@ -207,7 +207,6 @@ public class ListComparison {
 			}
 		}
 		// GUI Data
-		SegmentationMain.amountDuplicate = dublicates;
 		return segmentedCustomers;
 
 	}
