@@ -31,6 +31,8 @@ public class SegmentExcelWriter {
 	DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH");
 	// For GUI Parsing
 	public static PropertiesConfiguration config = Config.PROPERTIES;
+	
+	public static String segmentedFilePath;
 	// Actual Date
 	Date date = new Date();
 
@@ -46,6 +48,7 @@ public class SegmentExcelWriter {
 		// The new and old Excelfile name parsed by the GUI
 		String excelFileName = SegmentationController.saveToDirectoryPath + "/Segmented" + dateFormat.format(date)
 				+ ".xlsx";
+		segmentedFilePath = excelFileName;
 		String oldExcelFile = SegmentationController.POSfilePath;
 
 		// Integer for row/cell finding

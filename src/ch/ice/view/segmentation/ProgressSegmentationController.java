@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javax.swing.Timer;
 
 import ch.ice.SegmentationMain;
+import ch.ice.controller.file.SegmentExcelWriter;
 import ch.ice.controller.threads.SegmentationThread;
 import ch.ice.view.SegmentationController;
 import ch.ice.view.WelcomeController;
@@ -131,7 +132,7 @@ public class ProgressSegmentationController extends Thread implements Initializa
 	public void openPOSfile() throws IOException{
 		// Open the segmented POS-file in Excel
 		Desktop dt = Desktop.getDesktop();
-		dt.open(new File(SegmentationController.POSfilePath));
+		dt.open(new File(SegmentExcelWriter.segmentedFilePath));
 	}
 	
 	public void close(){
