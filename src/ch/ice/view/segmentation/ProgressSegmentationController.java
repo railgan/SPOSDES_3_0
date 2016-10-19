@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -56,6 +57,9 @@ public class ProgressSegmentationController extends Thread implements Initializa
 	
 	@FXML
 	private Label lblAmountRows;
+	
+	@FXML
+	private ImageView imgViewSchurter;
 
 	public boolean working = true;
 
