@@ -11,25 +11,26 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="segmentWindow" fx:id="vBox" prefHeight="453.0" prefWidth="641.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.SegmentationController">
-  <children>
-      <StackPane stylesheets="@WebCrawler.css" VBox.vgrow="ALWAYS">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="610.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.SegmentationController">
+   <children>
+      <StackPane prefHeight="29.0" prefWidth="610.0" stylesheets="@WebCrawler.css">
          <children>
-          <MenuBar minHeight="29.0" prefHeight="29.0" StackPane.alignment="TOP_LEFT">
-            <menus>
-              <Menu mnemonicParsing="false" text="File">
-                <items>
-                  <MenuItem fx:id="MetaTags" mnemonicParsing="false" onAction="#startConfiguration" text="Properties" />
+            <MenuBar minHeight="29.0" prefHeight="29.0" prefWidth="611.0" StackPane.alignment="TOP_LEFT">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="MetaTags" mnemonicParsing="false" onAction="#startConfiguration" text="Properties" />
                         <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#closeWindow" text="Quit" />
-                </items>
-              </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                      <MenuItem fx:id="manualMenuItem" mnemonicParsing="false" onAction="#startManual" text="Manual" />
-                    </items>
+                     </items>
                   </Menu>
-            </menus>
-          </MenuBar>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="manualMenuItem" mnemonicParsing="false" onAction="#startManual" text="Manual" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
             <HBox alignment="TOP_RIGHT" fillHeight="false" maxHeight="29.0" maxWidth="60.0" spacing="8.0" StackPane.alignment="TOP_RIGHT">
                <children>
                   <Button id="lowerWindowButton" fx:id="btnLowerWindow" mnemonicParsing="false" onAction="#lowerWindow" prefHeight="28.0" text="_" />
@@ -41,48 +42,45 @@
             </HBox>
          </children>
       </StackPane>
-    <AnchorPane id="mainMenuBar" maxHeight="-1.0" maxWidth="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
-      <AnchorPane fx:id="anchorLow" prefHeight="0.0" prefWidth="640.0" stylesheets="@WebCrawler.css">
-         <children>
-            <Button id="startSearchButton" fx:id="btnStartSegmentation" layoutX="52.0" layoutY="113.0" mnemonicParsing="false" onAction="#startSegmentation" text="Start Segmentation" textFill="WHITE">
-               <effect>
-                  <Reflection fraction="0.53" topOpacity="0.75" />
-               </effect>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Label fx:id="internetLabel" layoutX="60.0" layoutY="163.0" text="Internet:" visible="false" />
-            <Label fx:id="bingLabel" layoutX="60.0" layoutY="188.0" text="Bing:" visible="false" />
-            <ImageView fx:id="searchImage" fitHeight="40.0" fitWidth="100.0" layoutX="511.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
-            <Button id="startSearchButton" fx:id="btnCancel" layoutX="241.0" layoutY="113.0" mnemonicParsing="false" onAction="#startStartmenue" text="Cancel" textFill="WHITE">
-               <effect>
-                  <Reflection fraction="0.53" topOpacity="0.75" />
-               </effect>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Label layoutX="52.0" layoutY="-175.0" text="Please select File for Segmentation">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <TextField id="fileTextField" fx:id="txtPOSfile" editable="false" layoutX="52.0" layoutY="-149.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
-            <Button id="selectFileButton" fx:id="btnSelectPOSfile" layoutX="508.0" layoutY="-148.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
-            <Label layoutX="52.0" layoutY="-91.0" text="Select Industries Segmentations">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></Label>
-            <TextField id="fileTextField" fx:id="txtSaveTo" editable="false" layoutX="52.0" layoutY="31.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define your processed File will be saved" />
-            <Button id="selectFileButton" fx:id="btnChangeDir" layoutX="508.0" layoutY="31.0" mnemonicParsing="false" onAction="#startChangeDir" prefWidth="81.0" text="Change" textFill="WHITE" />
-            <Label layoutX="52.0" layoutY="4.0" text="Your File will be saved to:">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></Label>
-            <TextField id="fileTextField" fx:id="txtSegmentationFile" editable="false" layoutX="52.0" layoutY="-64.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
-            <Button id="selectFileButton" fx:id="btnSelectSegmentation" layoutX="508.0" layoutY="-63.0" mnemonicParsing="false" onAction="#startSearchSegmentation" text="Select File" textFill="WHITE" />
-         </children>
-      </AnchorPane>
-  </children>
-</VBox>
+      <Button id="selectFileButton" fx:id="btnSelectSegmentation" layoutX="498.0" layoutY="200.0" mnemonicParsing="false" onAction="#startSearchSegmentation" text="Select File" textFill="WHITE" />
+      <TextField id="fileTextField" fx:id="txtSegmentationFile" editable="false" layoutX="36.0" layoutY="199.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
+      <Label layoutX="37.0" layoutY="275.0" text="Your File will be saved to:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button id="selectFileButton" fx:id="btnChangeDir" layoutX="498.0" layoutY="303.0" mnemonicParsing="false" onAction="#startChangeDir" prefWidth="81.0" text="Change" textFill="WHITE" />
+      <TextField id="fileTextField" fx:id="txtSaveTo" editable="false" layoutX="37.0" layoutY="302.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define your processed File will be saved" />
+      <Label layoutX="36.0" layoutY="172.0" text="Select Industries Segmentations">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button id="selectFileButton" fx:id="btnSelectPOSfile" layoutX="498.0" layoutY="98.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
+      <TextField id="fileTextField" fx:id="txtPOSfile" editable="false" layoutX="32.0" layoutY="97.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
+      <Label layoutX="32.0" layoutY="71.0" text="Please select File for Segmentation">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button id="startSearchButton" fx:id="btnCancel" layoutX="226.0" layoutY="377.0" mnemonicParsing="false" onAction="#startStartmenue" text="Cancel" textFill="WHITE">
+         <effect>
+            <Reflection fraction="0.53" topOpacity="0.75" />
+         </effect>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button id="startSearchButton" fx:id="btnStartSegmentation" layoutX="37.0" layoutY="377.0" mnemonicParsing="false" onAction="#startSegmentation" text="Start Segmentation" textFill="WHITE">
+         <effect>
+            <Reflection fraction="0.53" topOpacity="0.75" />
+         </effect>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblPOSFile" layoutX="32.0" layoutY="132.0" />
+      <Label fx:id="lblSegmentationFile" layoutX="37.0" layoutY="234.0" />
+      <Label fx:id="lblSaveTo" layoutX="37.0" layoutY="336.0" />
+   </children>
+</AnchorPane>

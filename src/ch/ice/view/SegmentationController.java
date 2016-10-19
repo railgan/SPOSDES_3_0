@@ -23,6 +23,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -69,6 +70,15 @@ public class SegmentationController {
 	@FXML
 	private Button btnLowerWindow;
 	
+	@FXML
+	private Label lblPOSFile;
+	
+	@FXML
+	private Label lblSegmentationFile;
+	
+	@FXML
+	private Label lblSaveTo;
+	
 	/**
 	 * path for storage of file
 	 */
@@ -89,15 +99,38 @@ public class SegmentationController {
 
 	
 	public void startSegmentation() throws IOException{
+		
+		
 		// TextField variables
 		POSfilePath = txtPOSfile.getText();
 		saveToDirectoryPath = txtSaveTo.getText();
 		SegmentationFilePath = txtSegmentationFile.getText();
 		
-		
-		// Check if Excel are really available
-		//new File("path/to/file.txt").isFile();
-		//new File("C:/").exists();
+		// Check if Textboxes are filled
+		if(POSfilePath.equals("") | saveToDirectoryPath.equals("") | SegmentationFilePath.equals("")){
+			
+			if(POSfilePath.equals("")){
+				lblPOSFile.setText("Please select a file!");
+				lblPOSFile.setTextFill(Color.RED);
+			}else{
+				lblPOSFile.setText("");
+			}
+			
+			if(SegmentationFilePath.equals("")){
+				lblSegmentationFile.setText("Please select a file!");
+				lblSegmentationFile.setTextFill(Color.RED);
+				}else{
+					lblPOSFile.setText("");
+				}
+			
+			if(saveToDirectoryPath.equals("")){
+				lblSaveTo.setText("Please select a folder!");
+				lblSaveTo.setTextFill(Color.RED);
+			}else{
+				lblPOSFile.setText("");
+			}
+		}else{
+
 		
 		// Open Progress Window
 		
@@ -115,6 +148,7 @@ public class SegmentationController {
 		currentStage.close();
 		// Start Segmentation Function
 		SegmentationThread.main(null);
+		}
 	}
 	
 	public void lowerWindow(){

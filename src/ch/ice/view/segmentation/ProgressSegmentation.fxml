@@ -9,11 +9,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.segmentation.ProgressSegmentationController">
    <children>
-      <Button fx:id="btnCancel" layoutX="133.0" layoutY="187.0" mnemonicParsing="false" text="Cancel" textFill="WHITE" />
-      <Button fx:id="btnClose" layoutX="400.0" layoutY="187.0" mnemonicParsing="false" text="Close" textFill="WHITE" />
-      <Button fx:id="btnOpenFile" layoutX="228.0" layoutY="187.0" mnemonicParsing="false" text="Open segmented File" textFill="WHITE" />
-      <Label fx:id="lblStatusObject" layoutX="161.0" layoutY="50.0" prefHeight="65.0" prefWidth="383.0" text="Starting" wrapText="true" />
+      <Button fx:id="btnClose" layoutX="258.0" layoutY="212.0" mnemonicParsing="false" onAction="#close" text="Close" textFill="WHITE" />
+      <Button fx:id="btnOpenFile" layoutX="322.0" layoutY="212.0" mnemonicParsing="false" onAction="#openPOSfile" text="Open segmented File" textFill="WHITE" />
+      <Label fx:id="lblStatusObject" alignment="CENTER" layoutX="109.0" layoutY="166.0" prefHeight="25.0" prefWidth="342.0" text="Starting" wrapText="true" />
       <ProgressBar fx:id="progressbar" layoutX="29.0" layoutY="140.0" prefHeight="18.0" prefWidth="503.0" progress="0.0" />
-      <ListView fx:id="lstStatusPhase" layoutX="39.0" layoutY="14.0" prefHeight="98.0" prefWidth="94.0" />
+      <Label fx:id="lblAmountSegmented" layoutX="275.0" layoutY="74.0" />
+      <Label fx:id="lblAmountDuplicate" layoutX="275.0" layoutY="102.0" />
+      <Label fx:id="lblAmountSegmented1" layoutX="75.0" layoutY="74.0" text="Amount of Segmented Customers:" />
+      <Label fx:id="lblAmountSegmented2" layoutX="75.0" layoutY="102.0" text="Amount of Duplicate Customers:" />
    </children>
 </AnchorPane>

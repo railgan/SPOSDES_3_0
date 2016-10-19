@@ -16,6 +16,7 @@ public class SegmentationThread extends Thread {
 		(new SegmentationThread()).start();
 
 	}
+	
 
 	public void run() {
 		try {
