@@ -12,7 +12,7 @@
    <children>
       <Button fx:id="btnClose" layoutX="487.0" layoutY="200.0" mnemonicParsing="false" onAction="#close" text="Close" textFill="WHITE" />
       <Button fx:id="btnOpenFile" layoutX="28.0" layoutY="200.0" mnemonicParsing="false" onAction="#openPOSfile" text="Open segmented file" textFill="WHITE" />
-      <Label fx:id="lblStatusObject" alignment="CENTER" layoutX="109.0" layoutY="159.0" prefHeight="25.0" prefWidth="342.0" text="Starting" wrapText="true" />
+      <Label fx:id="lblStatusObject" layoutX="27.0" layoutY="158.0" prefHeight="25.0" prefWidth="342.0" text="Starting" wrapText="true" />
       <ProgressBar fx:id="progressbar" layoutX="28.0" layoutY="128.0" prefHeight="18.0" prefWidth="503.0" progress="0.0" />
       <Label fx:id="lblAmountRows" layoutX="269.0" layoutY="28.0" />
       <Label fx:id="lblAmountSegmented" layoutX="269.0" layoutY="58.0" />
@@ -20,6 +20,6 @@
       <Label layoutX="28.0" layoutY="58.0" text="Amount of segmented customers:" />
       <Label layoutX="28.0" layoutY="88.0" text="Amount of duplicate customers:" />
       <Label layoutX="28.0" layoutY="28.0" text="Current customer:" />
-      <ImageView fx:id="imageViewSchurter" fitHeight="61.0" fitWidth="183.0" layoutX="348.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageViewSchurter" fitHeight="61.0" fitWidth="183.0" layoutX="363.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
