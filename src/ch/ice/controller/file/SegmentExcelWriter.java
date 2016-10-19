@@ -79,7 +79,7 @@ public class SegmentExcelWriter {
 			// GUI Display of progressbar
 			SegmentationMain.progressPercent = 0.15 / segmentCustomerList.size() * rownum + 0.5;
 			//GUI Variable
-			SegmentationMain.currentRows = rownum;
+			SegmentationMain.currentRows = rownum-2;
 			// Get's current row
 			row = sheet.getRow(rownum++);
 			// Checks if the Object exists (not empty / null)
@@ -107,7 +107,7 @@ public class SegmentExcelWriter {
 			// GUI Display of Progressbar
 			SegmentationMain.progressPercent = 0.15 / segmentCustomerList.size() * rownum + 0.65;
 			//GUI Variable
-			SegmentationMain.currentRows = rownum;
+			SegmentationMain.currentRows = rownum-2;
 			// Get's current Row
 			row = sheet.getRow(rownum++);
 			// Checks if row is empty
@@ -133,7 +133,7 @@ public class SegmentExcelWriter {
 			// GUI Display
 			SegmentationMain.progressPercent = 0.15 / segmentCustomerList.size() * rownum + 0.8;
 			SegmentationMain.progressText = "Writing Customer: " + object.getCompanyName();
-			SegmentationMain.currentRows = rownum;
+			SegmentationMain.currentRows = rownum-2;
 			// Checks if object is duplicate and skips them
 			if (object.isDublicate()) {
 				continue;
