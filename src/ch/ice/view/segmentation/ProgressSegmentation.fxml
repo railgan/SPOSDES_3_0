@@ -14,12 +14,12 @@
       <Button fx:id="btnOpenFile" layoutX="29.0" layoutY="212.0" mnemonicParsing="false" onAction="#openPOSfile" text="Open segmented File" textFill="WHITE" />
       <Label fx:id="lblStatusObject" alignment="CENTER" layoutX="109.0" layoutY="166.0" prefHeight="25.0" prefWidth="342.0" text="Starting" wrapText="true" />
       <ProgressBar fx:id="progressbar" layoutX="29.0" layoutY="140.0" prefHeight="18.0" prefWidth="503.0" progress="0.0" />
-      <Label fx:id="lblAmountRows" layoutX="275.0" layoutY="40.0" />
+      <Label fx:id="lblAmountRows" layoutX="273.0" layoutY="42.0" />
       <Label fx:id="lblAmountSegmented" layoutX="275.0" layoutY="74.0" />
       <Label fx:id="lblAmountDuplicate" layoutX="275.0" layoutY="102.0" />
       <Label layoutX="29.0" layoutY="69.0" text="Amount of Segmented Customers:" />
       <Label layoutX="29.0" layoutY="97.0" text="Amount of Duplicate Customers:" />
-      <Label layoutX="29.0" layoutY="40.0" text="Current Customer:" />
+      <Label layoutX="29.0" layoutY="42.0" text="Current Customer:" />
       <ImageView fitHeight="61.0" fitWidth="183.0" layoutX="363.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Pictures/Schurter300only.png" />
