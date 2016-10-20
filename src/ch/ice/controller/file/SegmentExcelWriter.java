@@ -136,7 +136,7 @@ public class SegmentExcelWriter {
 			// GUI Display
 			SegmentationMain.progressPercent = 0.15 / segmentCustomerList.size() * rownum + 0.8;
 			SegmentationMain.progressText = "Writing Customer: " + object.getCompanyName();
-			SegmentationMain.currentRows = rownum-2;
+			SegmentationMain.currentRows = rownum-2 + SegmentationMain.amountDuplicate;
 			// Checks if object is duplicate and skips them
 			if (object.isDublicate()) {
 				continue;
