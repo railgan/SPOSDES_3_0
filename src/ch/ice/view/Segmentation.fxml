@@ -11,8 +11,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="610.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.SegmentationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.SegmentationController">
    <children>
       <StackPane prefHeight="29.0" prefWidth="610.0" stylesheets="@WebCrawler.css">
          <children>
@@ -42,23 +41,23 @@
             </HBox>
          </children>
       </StackPane>
-      <Button id="selectFileButton" fx:id="btnSelectSegmentation" layoutX="498.0" layoutY="200.0" mnemonicParsing="false" onAction="#startSearchSegmentation" text="Select File" textFill="WHITE" />
+      <Button id="selectFileButton" fx:id="btnSelectSegmentation" layoutX="498.0" layoutY="200.0" mnemonicParsing="false" onAction="#startSearchSegmentation" prefHeight="25.0" prefWidth="85.0" text="Select File" textFill="WHITE" />
       <TextField id="fileTextField" fx:id="txtSegmentationFile" editable="false" layoutX="36.0" layoutY="199.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
-      <Label layoutX="37.0" layoutY="275.0" text="Your File will be saved to:">
+      <Label layoutX="37.0" layoutY="275.0" text="Your file will be saved to:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button id="selectFileButton" fx:id="btnChangeDir" layoutX="498.0" layoutY="303.0" mnemonicParsing="false" onAction="#startChangeDir" prefWidth="81.0" text="Change" textFill="WHITE" />
-      <TextField id="fileTextField" fx:id="txtSaveTo" editable="false" layoutX="37.0" layoutY="302.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define your processed File will be saved" />
-      <Label layoutX="36.0" layoutY="172.0" text="Select Industries Segmentations">
+      <Button id="selectFileButton" fx:id="btnChangeDir" layoutX="498.0" layoutY="303.0" mnemonicParsing="false" onAction="#startChangeDir" prefWidth="85.0" text="Select Folder" textFill="WHITE" />
+      <TextField id="fileTextField" fx:id="txtSaveTo" editable="false" layoutX="37.0" layoutY="302.0" prefHeight="26.0" prefWidth="436.0" promptText="Please define where your processed fle will be saved" />
+      <Label layoutX="36.0" layoutY="172.0" text="Please select industry segmentations">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button id="selectFileButton" fx:id="btnSelectPOSfile" layoutX="498.0" layoutY="98.0" mnemonicParsing="false" onAction="#startSearchFile" text="Select File" textFill="WHITE" />
+      <Button id="selectFileButton" fx:id="btnSelectPOSfile" layoutX="498.0" layoutY="98.0" mnemonicParsing="false" onAction="#startSearchFile" prefHeight="25.0" prefWidth="85.0" text="Select File" textFill="WHITE" />
       <TextField id="fileTextField" fx:id="txtPOSfile" editable="false" layoutX="32.0" layoutY="97.0" prefHeight="26.0" prefWidth="436.0" promptText="Please Select File" />
-      <Label layoutX="32.0" layoutY="71.0" text="Please select File for Segmentation">
+      <Label layoutX="32.0" layoutY="71.0" text="Please select file for segmentation">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

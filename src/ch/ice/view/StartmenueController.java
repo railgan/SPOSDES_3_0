@@ -71,6 +71,8 @@ public class StartmenueController {
 				Parent root1;
 				try {
 					// Welcome
+					
+					GUIMain.externalNetCheck();
 					Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
 
 					Scene scene = new Scene(root);

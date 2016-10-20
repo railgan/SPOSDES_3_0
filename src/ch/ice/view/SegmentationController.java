@@ -257,7 +257,7 @@ public class SegmentationController {
 		Desktop dt = Desktop.getDesktop();
 		try {
 
-			dt.open(new File("conf/SPOSDES_manual.pdf"));
+			dt.open(new File("conf/SPOSDES_manual_segmentation.pdf"));
 		} catch (IOException e) {
 			// TODO
 			// Auto-generated

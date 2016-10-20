@@ -9,39 +9,39 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<AnchorPane prefHeight="500.0" prefWidth="400.0" stylesheets="@../WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.segmentation.ConfigController">
+<AnchorPane prefHeight="354.0" prefWidth="400.0" stylesheets="@../WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.segmentation.ConfigController">
    <children>
-      <Button fx:id="btnSafe" layoutX="264.0" layoutY="447.0" mnemonicParsing="false" onAction="#safeConfiguration" text="Save" textFill="WHITE" />
-      <Button fx:id="btnCancel" layoutX="319.0" layoutY="447.0" mnemonicParsing="false" onAction="#cancelConfiguration" text="Cancel" textFill="WHITE" />
-      <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" text="Data Cleansing">
+      <Button fx:id="btnSafe" layoutX="264.0" layoutY="308.0" mnemonicParsing="false" onAction="#safeConfiguration" text="Save" textFill="WHITE" />
+      <Button fx:id="btnCancel" layoutX="319.0" layoutY="308.0" mnemonicParsing="false" onAction="#cancelConfiguration" text="Cancel" textFill="WHITE" />
+      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="24.0" text="Data cleansing">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="13.0" layoutY="58.0" text="Remove Special Charakters">
+      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="58.0" text="Remove special characters">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="13.0" layoutY="117.0" text="Deduplicate List">
+      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="120.0" text="Deduplicate list">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <CheckBox fx:id="chbRemoveSpecialCharakters" layoutX="14.0" layoutY="83.0" mnemonicParsing="false" onAction="#handleChbRemove" />
-      <CheckBox fx:id="chbDeduplicate" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleChbDeduplicate" />
+      <CheckBox fx:id="chbRemoveSpecialCharakters" layoutX="18.0" layoutY="82.0" mnemonicParsing="false" onAction="#handleChbRemove" />
+      <CheckBox fx:id="chbDeduplicate" layoutX="18.0" layoutY="144.0" mnemonicParsing="false" onAction="#handleChbDeduplicate" />
       <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="207.0" text="Segmentation">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSegmentMargin" alignment="CENTER" layoutX="195.0" layoutY="238.0" maxWidth="50.0" prefHeight="25.0" prefWidth="50.0" />
-      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="241.0" text="Segmentation Margin">
+      <TextField fx:id="txtSegmentMargin" alignment="CENTER" layoutX="200.0" layoutY="238.0" maxWidth="50.0" prefHeight="25.0" prefWidth="50.0" />
+      <Label alignment="TOP_LEFT" layoutX="18.0" layoutY="241.0" text="Segmentation margin">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Separator layoutX="13.0" layoutY="191.0" prefHeight="0.0" prefWidth="375.0" />
+      <Separator layoutX="13.0" layoutY="190.0" prefHeight="0.0" prefWidth="375.0" />
       <Label fx:id="lblMargin" layoutX="21.0" layoutY="274.0" />
    </children>
 </AnchorPane>

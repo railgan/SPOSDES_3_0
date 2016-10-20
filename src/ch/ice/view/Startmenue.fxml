@@ -11,11 +11,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<AnchorPane prefHeight="373.0" prefWidth="550.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.StartmenueController">
+<AnchorPane prefHeight="373.0" prefWidth="540.0" stylesheets="@WebCrawler.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ice.view.StartmenueController">
    <children>
       <StackPane prefHeight="29.0" prefWidth="550.0">
          <children>
-            <MenuBar minHeight="29.0" prefHeight="29.0" StackPane.alignment="TOP_LEFT" />
+            <MenuBar minHeight="29.0" prefHeight="29.0" prefWidth="553.0" StackPane.alignment="TOP_LEFT" />
             <HBox alignment="TOP_RIGHT" fillHeight="false" maxHeight="29.0" maxWidth="60.0" spacing="8.0" StackPane.alignment="TOP_RIGHT">
                <children>
                   <Button id="lowerWindowButton" fx:id="btnLowerWindow" mnemonicParsing="false" onAction="#lowerWindow" prefHeight="28.0" text="_" />
