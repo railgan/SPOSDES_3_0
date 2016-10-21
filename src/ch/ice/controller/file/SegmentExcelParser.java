@@ -210,7 +210,8 @@ public class SegmentExcelParser {
 	 */
 	public ArrayList<Segment> readRegisterFile() throws IOException {
 		// Where the File has to be located
-		InputStream ExcelFileToRead = new FileInputStream("C:/Javatest/Medical.xlsx");
+		
+		InputStream ExcelFileToRead = new FileInputStream(SegmentationController.SegmentationFilePath);
 
 		// Standard POI Variables
 		XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);

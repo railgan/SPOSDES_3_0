@@ -225,7 +225,7 @@ public class SegmentationController {
 	public void startConfiguration() throws IOException{
 		Stage primaryStage1 = new Stage();
 		primaryStage1.initStyle(StageStyle.UNDECORATED);
-		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/segmentation/config.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/segmentation/Config.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("WebCrawler.css").toExternalForm());
 		primaryStage1.setScene(scene);
