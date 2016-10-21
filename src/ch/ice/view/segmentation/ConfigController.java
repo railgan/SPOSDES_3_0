@@ -119,7 +119,7 @@ public class ConfigController {
 				primaryStage.initStyle(StageStyle.UNDECORATED);
 				Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Segmentation.fxml"));
 				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("/ch/ice/view/Webcrawler.css").toExternalForm());
+				scene.getStylesheets().add(getClass().getResource("/ch/ice/view/WebCrawler.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
 				
@@ -176,7 +176,7 @@ public class ConfigController {
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		Parent root = FXMLLoader.load(getClass().getResource("/ch/ice/view/Segmentation.fxml"));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/ch/ice/view/Webcrawler.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/ch/ice/view/WebCrawler.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
