@@ -91,10 +91,10 @@ public class ConfigController {
 	public void handleChbRemove() {
 
 		if (chbRemoveSpecialCharakters.isSelected() == false) {
-			chbRemoveSpecialCharakters.setText("Removing Special Charakters is deactivated");
+			chbRemoveSpecialCharakters.setText("Removing special characters is deactivated");
 			chbRemoveSpecialCharakters.setTextFill(Color.RED);
 		} else{
-			chbRemoveSpecialCharakters.setText("Removing Special Charakters is activated");
+			chbRemoveSpecialCharakters.setText("Removing special characters is activated");
 			chbRemoveSpecialCharakters.setTextFill(Color.GREEN);
 		}
 	}
@@ -103,10 +103,10 @@ public class ConfigController {
 	public void handleChbDeduplicate() {
 
 		if (chbDeduplicate.isSelected() == false) {
-			chbDeduplicate.setText("Deduplicating is deactivated");
+			chbDeduplicate.setText("Deduplication is deactivated");
 			chbDeduplicate.setTextFill(Color.RED);
 		} else{
-			chbDeduplicate.setText("Deduplicating is activated");
+			chbDeduplicate.setText("Deduplication is activated");
 			chbDeduplicate.setTextFill(Color.GREEN);
 		}
 	}
